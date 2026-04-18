@@ -1,0 +1,15 @@
+{
+  "name": "f1-hackathon",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "level1": "node level_1/app.js",
+    "level2": "node level_2/app.js", 
+    "level3": "node level_3/app.js",
+    "level4": "node level_4/app.js"
+  }
+}

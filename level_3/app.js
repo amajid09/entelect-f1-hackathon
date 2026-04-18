@@ -1,3 +1,4 @@
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -5,401 +6,223 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ---------------- FILE IO ----------------
-function readFileData() {
-  const filePath = path.join(__dirname, "3.txt");
-  const data = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(data);
+function readFileData(file) {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, file), "utf8"));
 }
-
 function writeOutput(data) {
-  const filePath = path.join(__dirname, "output.txt");
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+  fs.writeFileSync(path.join(__dirname, "output.txt"), JSON.stringify(data, null, 2), "utf8");
 }
 
-// ---------------- LOAD DATA ----------------
-const data = readFileData();
+const data = readFileData("3.txt");
+const { car, race, track, available_sets, weather, tyres } = data;
+const weatherConditions = weather.conditions;
+const tyreProperties = tyres.properties;
 
-const car = data.car;
-const race = data.race;
-const track = data.track;
-const availableSets = data.available_sets;
-const weatherConditions = data.weather.conditions;
-const tyreProperties = data.tyres.properties;
+function round2(v) { return Math.round(v * 100) / 100; }
 
-function round(value) {
-  return Number(value.toFixed(2));
-}
+// ── Weather cycling ──────────────────────────────────────────────────────────
+const CYCLE_DURATION = weatherConditions.reduce((s, w) => s + w.duration_s, 0);
 
-// ---------------- WEATHER ----------------
-function getWeatherCycleDuration() {
-  return weatherConditions.reduce((sum, weather) => sum + weather.duration_s, 0);
-}
-
-function getWeatherAtTime(timeSeconds) {
-  const cycleDuration = getWeatherCycleDuration();
-  const timeInCycle = timeSeconds % cycleDuration;
-
+function getWeatherAtTime(t) {
+  const tInCycle = t % CYCLE_DURATION;
   let elapsed = 0;
-
-  for (const weather of weatherConditions) {
-    elapsed += weather.duration_s;
-    if (timeInCycle < elapsed) {
-      return weather;
-    }
+  for (const w of weatherConditions) {
+    elapsed += w.duration_s;
+    if (tInCycle < elapsed) return w;
   }
-
   return weatherConditions[weatherConditions.length - 1];
 }
 
-function getWeatherMultiplierKey(condition) {
-  const map = {
-    dry: "dry_friction_multiplier",
-    cold: "cold_friction_multiplier",
-    light_rain: "light_rain_friction_multiplier",
-    heavy_rain: "heavy_rain_friction_multiplier",
-  };
+const WEATHER_FRICTION_KEY = {
+  dry:        "dry_friction_multiplier",
+  cold:       "cold_friction_multiplier",
+  light_rain: "light_rain_friction_multiplier",
+  heavy_rain: "heavy_rain_friction_multiplier",
+};
 
-  return map[condition];
-}
-
-function getRecommendedCompound(condition) {
-  if (condition === "heavy_rain") return "Wet";
-  if (condition === "light_rain") return "Intermediate";
-  if (condition === "cold") return "Medium";
-  return "Medium";
-}
-
-// ---------------- TYRES ----------------
-function getInitialTyreId(compound) {
-  const set = availableSets.find((item) => item.compound === compound);
-  if (!set) {
-    throw new Error(`No tyre set found for compound: ${compound}`);
+// ── Tyre selection ───────────────────────────────────────────────────────────
+/**
+ * Best compound = highest effective friction in the given weather.
+ * tyre_friction = life_span * weather_multiplier (no degradation in L3)
+ * But we also want a tyre that won't be penalised in the next weather window.
+ * Simple heuristic: pick best friction for current weather.
+ */
+function bestCompoundForWeather(condition) {
+  const key = WEATHER_FRICTION_KEY[condition];
+  let best = null, bestF = -Infinity;
+  for (const set of available_sets) {
+    const props = tyreProperties[set.compound];
+    const f = props.life_span * props[key];
+    if (f > bestF) { bestF = f; best = set.compound; }
   }
+  return best;
+}
+
+function getAvailableId(compound) {
+  const set = available_sets.find(s => s.compound === compound);
+  if (!set) throw new Error(`No set for ${compound}`);
   return set.ids[0];
 }
 
-function getTyreIdForCompound(compound) {
-  const set = availableSets.find((item) => item.compound === compound);
-  if (!set) {
-    throw new Error(`No tyre set found for compound: ${compound}`);
-  }
-  return set.ids[0];
+// ── Physics ──────────────────────────────────────────────────────────────────
+const G = 9.8;
+const K_BASE = 0.0005;
+const K_DRAG = 0.0000000015;
+
+function getTyreFriction(compound, condition) {
+  const props = tyreProperties[compound];
+  return props.life_span * props[WEATHER_FRICTION_KEY[condition]];
 }
 
-function getTyreFriction(compound, weatherCondition) {
-  const tyre = tyreProperties[compound];
-  const multiplierKey = getWeatherMultiplierKey(weatherCondition);
-  if (!multiplierKey) {
-    throw new Error(`Unsupported weather condition: ${weatherCondition}`);
-  }
-
-  // Level 3: weather matters, but tyre degradation is not yet the main focus.
-  // Using life_span * friction multiplier as the working friction model.
-  return tyre.life_span * tyre[multiplierKey];
+function safeCornerSpeed(radius, compound, condition) {
+  return Math.sqrt(getTyreFriction(compound, condition) * G * radius) + car["crawl_constant_m/s"];
 }
 
-// ---------------- PHYSICS ----------------
-function getSafeCornerSpeed(radius, compound, weatherCondition) {
-  const friction = getTyreFriction(compound, weatherCondition);
-  const g = 9.8;
-  return Math.sqrt(friction * g * radius) + car["crawl_constant_m/s"];
+function solveMaxPeakSpeed({ entrySpeed, cornerSpeed, length, accel, brake, maxSpeed }) {
+  const num = length + entrySpeed ** 2 / (2 * accel) + cornerSpeed ** 2 / (2 * brake);
+  const den = 1 / (2 * accel) + 1 / (2 * brake);
+  return Math.min(Math.sqrt(Math.max(0, num / den)), maxSpeed);
 }
 
-function solveTargetSpeed({
-  entrySpeed,
-  cornerSpeed,
-  straightLength,
-  accel,
-  brake,
-  maxSpeed,
-}) {
-  const numerator =
-    straightLength +
-    entrySpeed ** 2 / (2 * accel) +
-    cornerSpeed ** 2 / (2 * brake);
-
-  const denominator = 1 / (2 * accel) + 1 / (2 * brake);
-  const solved = Math.sqrt(Math.max(0, numerator / denominator));
-
-  return Math.min(solved, maxSpeed);
+function brakeDistance(target, cs, brake) {
+  return Math.max(0, (target ** 2 - cs ** 2) / (2 * brake));
 }
 
-function getBrakeDistance(targetSpeed, cornerSpeed, brake) {
-  return Math.max(0, (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake));
+function segTime({ entrySpeed, targetSpeed, cornerSpeed, length, accel, brake }) {
+  const accelDist = Math.max(0, (targetSpeed ** 2 - entrySpeed ** 2) / (2 * accel));
+  const brakeDist = Math.max(0, (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake));
+  const cruiseDist = Math.max(0, length - accelDist - brakeDist);
+  let t = 0;
+  if (targetSpeed > entrySpeed) t += (targetSpeed - entrySpeed) / accel;
+  if (cruiseDist > 0) t += cruiseDist / Math.max(targetSpeed, 1e-4);
+  if (targetSpeed > cornerSpeed) t += (targetSpeed - cornerSpeed) / brake;
+  return t;
 }
 
-function getNextCornerIndex(segments, startIndex) {
-  for (let i = startIndex + 1; i < segments.length; i++) {
+function fuelUsed(vi, vf, dist) {
+  const avg = (vi + vf) / 2;
+  return (K_BASE + K_DRAG * avg ** 2) * dist;
+}
+
+function getNextCornerIndex(segments, from) {
+  for (let i = from + 1; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
-
   for (let i = 0; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
-
   return -1;
 }
 
-// ---------------- FUEL ----------------
-function getFuelUsed(initialSpeed, finalSpeed, distance) {
-  const Kbase = 0.0005;
-  const Kdrag = 0.0000000015;
-  const avgSpeed = (initialSpeed + finalSpeed) / 2;
-
-  return (Kbase + Kdrag * avgSpeed ** 2) * distance;
-}
-
-// ---------------- TIME ----------------
-function getStraightTime({
-  entrySpeed,
-  targetSpeed,
-  cornerSpeed,
-  straightLength,
-  accel,
-  brake,
-}) {
-  const accelDistance = Math.max(
-    0,
-    (targetSpeed ** 2 - entrySpeed ** 2) / (2 * accel)
-  );
-
-  const brakeDistance = Math.max(
-    0,
-    (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake)
-  );
-
-  const cruiseDistance = Math.max(0, straightLength - accelDistance - brakeDistance);
-
-  let time = 0;
-
-  if (targetSpeed > entrySpeed) {
-    time += (targetSpeed - entrySpeed) / accel;
-  }
-
-  if (cruiseDistance > 0) {
-    time += cruiseDistance / Math.max(targetSpeed, 0.0001);
-  }
-
-  if (targetSpeed > cornerSpeed) {
-    time += (targetSpeed - cornerSpeed) / brake;
-  }
-
-  return time;
-}
-
-// ---------------- LAP GENERATION ----------------
-function generateLapSegments({
-  segments,
-  entrySpeed,
-  tyreCompound,
-  lapStartTime,
-}) {
-  const output = [];
-  let currentSpeed = entrySpeed;
+// ── Lap simulation ───────────────────────────────────────────────────────────
+function simulateLap({ segments, entrySpeed, compound, lapStartTime }) {
+  const out = [];
+  let speed = entrySpeed;
   let lapTime = 0;
-  let fuelUsedLap = 0;
+  let lapFuel = 0;
 
   for (let i = 0; i < segments.length; i++) {
     const seg = segments[i];
-    const currentWeather = getWeatherAtTime(lapStartTime + lapTime);
-
-    const effectiveAccel =
-      car["accel_m/se2"] * currentWeather.acceleration_multiplier;
-
-    const effectiveBrake =
-      car["brake_m/se2"] * currentWeather.deceleration_multiplier;
+    const w = getWeatherAtTime(lapStartTime + lapTime);
+    const effAccel = car["accel_m/se2"] * w.acceleration_multiplier;
+    const effBrake = car["brake_m/se2"] * w.deceleration_multiplier;
 
     if (seg.type === "straight") {
-      const nextCornerIndex = getNextCornerIndex(segments, i);
-      if (nextCornerIndex === -1) {
-        throw new Error("Track must contain at least one corner");
-      }
-
-      const nextCorner = segments[nextCornerIndex];
-
-      const safeCornerSpeed = getSafeCornerSpeed(
-        nextCorner.radius_m,
-        tyreCompound,
-        currentWeather.condition
-      );
-
-      const targetSpeed = solveTargetSpeed({
-        entrySpeed: currentSpeed,
-        cornerSpeed: safeCornerSpeed,
-        straightLength: seg.length_m,
-        accel: effectiveAccel,
-        brake: effectiveBrake,
-        maxSpeed: car["max_speed_m/s"],
+      const ni = getNextCornerIndex(segments, i);
+      const cs = safeCornerSpeed(segments[ni].radius_m, compound, w.condition);
+      const target = solveMaxPeakSpeed({
+        entrySpeed: speed, cornerSpeed: cs, length: seg.length_m,
+        accel: effAccel, brake: effBrake, maxSpeed: car["max_speed_m/s"],
       });
-
-      const brakeDistance = getBrakeDistance(
-        targetSpeed,
-        safeCornerSpeed,
-        effectiveBrake
-      );
-
-      const straightTime = getStraightTime({
-        entrySpeed: currentSpeed,
-        targetSpeed,
-        cornerSpeed: safeCornerSpeed,
-        straightLength: seg.length_m,
-        accel: effectiveAccel,
-        brake: effectiveBrake,
+      const bd = brakeDistance(target, cs, effBrake);
+      const dt = segTime({
+        entrySpeed: speed, targetSpeed: target, cornerSpeed: cs,
+        length: seg.length_m, accel: effAccel, brake: effBrake,
       });
-
-      const fuelUsed = getFuelUsed(currentSpeed, targetSpeed, seg.length_m);
-
-      lapTime += straightTime;
-      fuelUsedLap += fuelUsed;
-
-      output.push({
-        id: seg.id,
-        type: "straight",
-        "target_m/s": round(targetSpeed),
-        brake_start_m_before_next: round(brakeDistance),
-      });
-
-      currentSpeed = safeCornerSpeed;
+      lapTime += dt;
+      lapFuel += fuelUsed(speed, target, seg.length_m);
+      out.push({ id: seg.id, type: "straight", "target_m/s": round2(target), brake_start_m_before_next: round2(bd) });
+      speed = cs;
     } else {
-      const cornerTime = seg.length_m / Math.max(currentSpeed, 0.0001);
-      const fuelUsed = getFuelUsed(currentSpeed, currentSpeed, seg.length_m);
-
+      const cornerTime = seg.length_m / Math.max(speed, 1e-4);
       lapTime += cornerTime;
-      fuelUsedLap += fuelUsed;
-
-      output.push({
-        id: seg.id,
-        type: "corner",
-      });
+      lapFuel += fuelUsed(speed, speed, seg.length_m);
+      out.push({ id: seg.id, type: "corner" });
     }
   }
 
-  return {
-    segments: output,
-    exitSpeed: currentSpeed,
-    lapTime,
-    fuelUsedLap,
-  };
+  return { segments: out, exitSpeed: speed, lapTime, lapFuel };
 }
 
-// ---------------- PIT STRATEGY ----------------
-function shouldChangeTyres(currentCompound, weatherNow, weatherNextLapStart) {
-  const idealNow = getRecommendedCompound(weatherNow.condition);
-  const idealNext = getRecommendedCompound(weatherNextLapStart.condition);
+// ── Race ─────────────────────────────────────────────────────────────────────
+const softCap = race["fuel_soft_cap_limit_l"];
 
-  if (currentCompound !== idealNow) {
-    return idealNow;
-  }
+// Choose initial compound based on starting weather
+const startWeather = getWeatherAtTime(0);
+let currentCompound = bestCompoundForWeather(startWeather.condition);
+const initialTyreId = getAvailableId(currentCompound);
 
-  if (currentCompound !== idealNext) {
-    return idealNext;
-  }
+const laps = [];
+let raceTime = 0;
+let currentSpeed = 0;
+let fuelRemaining = car["initial_fuel_l"];
 
-  return null;
-}
+for (let lap = 1; lap <= race.laps; lap++) {
+  const lapResult = simulateLap({
+    segments: track.segments,
+    entrySpeed: currentSpeed,
+    compound: currentCompound,
+    lapStartTime: raceTime,
+  });
 
-function getRefuelAmount(currentFuel, targetFuel) {
-  const capacityLeft = car["fuel_tank_capacity_l"] - currentFuel;
-  return Math.max(0, Math.min(targetFuel - currentFuel, capacityLeft));
-}
+  const fuelAfterLap = fuelRemaining - lapResult.lapFuel;
+  const lapsLeft = race.laps - lap;
 
-// ---------------- RACE ----------------
-function generateAllLaps() {
-  const laps = [];
+  // Weather at start of next lap
+  const weatherNextLap = getWeatherAtTime(raceTime + lapResult.lapTime);
+  const idealNextCompound = bestCompoundForWeather(weatherNextLap.condition);
 
-  let raceTime = 0;
-  let currentSpeed = 0;
-  let currentFuel = car["initial_fuel_l"];
+  // Decide pit
+  const needTyreChange = idealNextCompound !== currentCompound && lapsLeft > 0;
+  const estimatedFuelNeeded = lapResult.lapFuel * lapsLeft;
+  const needFuel = fuelAfterLap < estimatedFuelNeeded && lapsLeft > 0;
 
-  let currentCompound = getRecommendedCompound(
-    getWeatherAtTime(0).condition
-  );
+  let pit = { enter: false };
 
-  const initialTyreId = getInitialTyreId(currentCompound);
+  if ((needTyreChange || needFuel) && lapsLeft > 0) {
+    pit.enter = true;
 
-  for (let lap = 1; lap <= race.laps; lap++) {
-    const lapResult = generateLapSegments({
-      segments: track.segments,
-      entrySpeed: currentSpeed,
-      tyreCompound: currentCompound,
-      lapStartTime: raceTime,
-    });
-
-    const weatherNow = getWeatherAtTime(raceTime);
-    const weatherNextLapStart = getWeatherAtTime(raceTime + lapResult.lapTime);
-
-    const fuelAfterLap = currentFuel - lapResult.fuelUsedLap;
-
-    let pit = { enter: false };
-    let nextCompound = currentCompound;
-
-    const tyreChangeCompound = shouldChangeTyres(
-      currentCompound,
-      weatherNow,
-      weatherNextLapStart
-    );
-
-    let fuelRefuelAmount = 0;
-
-    // Basic fuel strategy:
-    // If fuel after this lap is less than roughly 1.2x this lap's fuel usage, top up.
-    if (fuelAfterLap < lapResult.fuelUsedLap * 1.2) {
-      fuelRefuelAmount = getRefuelAmount(fuelAfterLap, 120);
+    if (needTyreChange) {
+      pit.tyre_change_set_id = getAvailableId(idealNextCompound);
     }
 
-    if (tyreChangeCompound || fuelRefuelAmount > 0) {
-      pit.enter = true;
-
-      if (tyreChangeCompound) {
-        pit.tyre_change_set_id = getTyreIdForCompound(tyreChangeCompound);
-        nextCompound = tyreChangeCompound;
-      }
-
-      if (fuelRefuelAmount > 0) {
-        pit.fuel_refuel_amount_l = round(fuelRefuelAmount);
-      }
-    }
-
-    laps.push({
-      lap,
-      segments: lapResult.segments,
-      pit,
-    });
-
-    currentFuel = fuelAfterLap;
-    raceTime += lapResult.lapTime;
-
-    if (pit.enter) {
-      const pitBase = race["base_pit_stop_time_s"];
-      const tyreSwapTime = pit.tyre_change_set_id
-        ? race["pit_tyre_swap_time_s"]
-        : 0;
-      const refuelTime = pit.fuel_refuel_amount_l
-        ? pit.fuel_refuel_amount_l / race["pit_refuel_rate_l/s"]
-        : 0;
-
-      raceTime += pitBase + tyreSwapTime + refuelTime;
-
-      if (pit.fuel_refuel_amount_l) {
-        currentFuel += pit.fuel_refuel_amount_l;
-      }
-
-      currentCompound = nextCompound;
-      currentSpeed = race["pit_exit_speed_m/s"];
-    } else {
-      currentSpeed = lapResult.exitSpeed;
+    if (needFuel || needTyreChange) {
+      // Refuel just enough to finish — aim near soft cap
+      const fuelToEnd = estimatedFuelNeeded - fuelAfterLap;
+      const maxCanAdd = car["fuel_tank_capacity_l"] - fuelAfterLap;
+      const refuelAmt = round2(Math.min(Math.max(0, fuelToEnd), maxCanAdd));
+      if (refuelAmt > 0) pit.fuel_refuel_amount_l = refuelAmt;
     }
   }
 
-  return {
-    initial_tyre_id: initialTyreId,
-    laps,
-  };
+  laps.push({ lap, segments: lapResult.segments, pit });
+
+  fuelRemaining = fuelAfterLap;
+  raceTime += lapResult.lapTime;
+
+  if (pit.enter) {
+    const pitBase = race["base_pit_stop_time_s"];
+    const swapTime = pit.tyre_change_set_id ? race["pit_tyre_swap_time_s"] : 0;
+    const refTime = pit.fuel_refuel_amount_l ? pit.fuel_refuel_amount_l / race["pit_refuel_rate_l/s"] : 0;
+    raceTime += pitBase + swapTime + refTime;
+    if (pit.fuel_refuel_amount_l) fuelRemaining += pit.fuel_refuel_amount_l;
+    if (pit.tyre_change_set_id) currentCompound = idealNextCompound;
+    currentSpeed = race["pit_exit_speed_m/s"];
+  } else {
+    currentSpeed = lapResult.exitSpeed;
+  }
 }
 
-// ---------------- OUTPUT ----------------
-const output = generateAllLaps();
-writeOutput(output);
+writeOutput({ initial_tyre_id: initialTyreId, laps });
+console.log(`Level 3 done. Initial compound: ${currentCompound}`);
 
-console.log("Generated output.txt successfully");

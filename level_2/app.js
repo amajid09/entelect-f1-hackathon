@@ -1,3 +1,4 @@
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -5,94 +6,68 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ---------------- FILE IO ----------------
-function readFileData() {
-  const filePath = path.join(__dirname, "2.txt");
-  const data = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(data);
+function readFileData(file) {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, file), "utf8"));
 }
-
 function writeOutput(data) {
-  const filePath = path.join(__dirname, "output.txt");
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+  fs.writeFileSync(path.join(__dirname, "output.txt"), JSON.stringify(data, null, 2), "utf8");
 }
 
-// ---------------- LOAD DATA ----------------
-const data = readFileData();
+const data = readFileData("2.txt");
+const { car, race, track, available_sets, weather, tyres } = data;
+const weatherConditions = weather.conditions;
+const tyreProperties = tyres.properties;
 
-const car = data.car;
-const race = data.race;
-const track = data.track;
-const availableSets = data.available_sets;
-const weatherConditions = data.weather.conditions;
-const tyreProperties = data.tyres.properties;
+function round2(v) { return Math.round(v * 100) / 100; }
 
-// ---------- CONFIG ----------
-const chosenCompound = "Medium";
-// ----------------------------
-
-function round(value) {
-  return Number(value.toFixed(2));
-}
-
-// ---------------- TYRES ----------------
-function getInitialTyreId(compound) {
-  const set = availableSets.find((item) => item.compound === compound);
-  if (!set) throw new Error(`No tyre set found for ${compound}`);
-  return set.ids[0];
-}
+// ── Weather ──────────────────────────────────────────────────────────────────
+const WEATHER_KEY_MAP = {
+  dry:        "dry_friction_multiplier",
+  cold:       "cold_friction_multiplier",
+  light_rain: "light_rain_friction_multiplier",
+  heavy_rain: "heavy_rain_friction_multiplier",
+};
 
 function getStartingWeather() {
-  return weatherConditions.find(
-    (w) => w.id === race.starting_weather_condition_id,
-  );
+  return weatherConditions.find(w => w.id === race.starting_weather_condition_id)
+    ?? weatherConditions[0];
 }
 
+// ── Tyre selection ───────────────────────────────────────────────────────────
+function pickBestCompound() {
+  const weatherObj = getStartingWeather();
+  const key = WEATHER_KEY_MAP[weatherObj.condition] ?? "dry_friction_multiplier";
+  let best = null, bestF = -Infinity;
+  for (const set of available_sets) {
+    const f = tyreProperties[set.compound].life_span * tyreProperties[set.compound][key];
+    if (f > bestF) { bestF = f; best = set; }
+  }
+  return best;
+}
+
+// ── Physics ──────────────────────────────────────────────────────────────────
 function getTyreFriction(compound) {
-  const tyre = tyreProperties[compound];
-  const weather = getStartingWeather();
-
-  const map = {
-    dry: "dry_friction_multiplier",
-    cold: "cold_friction_multiplier",
-    light_rain: "light_rain_friction_multiplier",
-    heavy_rain: "heavy_rain_friction_multiplier",
-  };
-
-  return tyre.life_span * tyre[map[weather.condition]];
+  const props = tyreProperties[compound];
+  const w = getStartingWeather();
+  return props.life_span * props[WEATHER_KEY_MAP[w.condition] ?? "dry_friction_multiplier"];
 }
 
-// ---------------- PHYSICS ----------------
-function getSafeCornerSpeed(radius) {
-  const friction = getTyreFriction(chosenCompound);
-  const g = 9.8;
-  return Math.sqrt(friction * g * radius) + car["crawl_constant_m/s"];
+function safeCornerSpeed(radius, compound) {
+  return Math.sqrt(getTyreFriction(compound) * 9.8 * radius) + car["crawl_constant_m/s"];
 }
 
-function solveTargetSpeed({
-  entrySpeed,
-  cornerSpeed,
-  straightLength,
-  accel,
-  brake,
-  maxSpeed,
-}) {
-  const numerator =
-    straightLength +
-    entrySpeed ** 2 / (2 * accel) +
-    cornerSpeed ** 2 / (2 * brake);
-
-  const denominator = 1 / (2 * accel) + 1 / (2 * brake);
-
-  return Math.min(Math.sqrt(numerator / denominator), maxSpeed);
+function solveMaxPeakSpeed({ entrySpeed, cornerSpeed, length, accel, brake, maxSpeed }) {
+  const num = length + entrySpeed ** 2 / (2 * accel) + cornerSpeed ** 2 / (2 * brake);
+  const den = 1 / (2 * accel) + 1 / (2 * brake);
+  return Math.min(Math.sqrt(Math.max(0, num / den)), maxSpeed);
 }
 
-function getBrakeDistance(targetSpeed, cornerSpeed, brake) {
+function brakeDistance(targetSpeed, cornerSpeed, brake) {
   return Math.max(0, (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake));
 }
 
-function getNextCornerIndex(segments, startIndex) {
-  for (let i = startIndex + 1; i < segments.length; i++) {
+function getNextCornerIndex(segments, from) {
+  for (let i = from + 1; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
   for (let i = 0; i < segments.length; i++) {
@@ -101,137 +76,114 @@ function getNextCornerIndex(segments, startIndex) {
   return -1;
 }
 
-// ---------------- FUEL ----------------
-function getTrackLength() {
-  return track.segments.reduce((sum, s) => sum + s.length_m, 0);
+// ── Fuel ─────────────────────────────────────────────────────────────────────
+const K_BASE = 0.0005;
+const K_DRAG = 0.0000000015;
+
+function fuelUsedSegment(v_initial, v_final, distance) {
+  const avg = (v_initial + v_final) / 2;
+  return (K_BASE + K_DRAG * avg ** 2) * distance;
 }
 
-function getFuelPerLap() {
-  return getTrackLength() * car["fuel_consumption_l/m"];
-}
-
-// ---------------- SEGMENTS ----------------
-function generateLapSegments(segments, entrySpeed) {
-  const output = [];
-  let currentSpeed = entrySpeed;
-  let fuelUsedLap = 0;
+// ── Lap simulation ───────────────────────────────────────────────────────────
+function simulateLap(segments, entrySpeed, compound) {
+  const out = [];
+  let speed = entrySpeed;
+  let fuelUsed = 0;
 
   for (let i = 0; i < segments.length; i++) {
     const seg = segments[i];
 
     if (seg.type === "straight") {
-      const nextCornerIndex = getNextCornerIndex(segments, i);
-      const nextCorner = segments[nextCornerIndex];
+      const ni = getNextCornerIndex(segments, i);
+      const cs = safeCornerSpeed(segments[ni].radius_m, compound);
 
-      const safeCornerSpeed = getSafeCornerSpeed(nextCorner.radius_m);
-
-      const targetSpeed = solveTargetSpeed({
-        entrySpeed: currentSpeed,
-        cornerSpeed: safeCornerSpeed,
-        straightLength: seg.length_m,
+      const target = solveMaxPeakSpeed({
+        entrySpeed: speed,
+        cornerSpeed: cs,
+        length: seg.length_m,
         accel: car["accel_m/se2"],
         brake: car["brake_m/se2"],
         maxSpeed: car["max_speed_m/s"],
       });
 
-      const brakeDistance = getBrakeDistance(
-        targetSpeed,
-        safeCornerSpeed,
-        car["brake_m/se2"],
-      );
+      const bd = brakeDistance(target, cs, car["brake_m/se2"]);
+      fuelUsed += fuelUsedSegment(speed, target, seg.length_m);
 
-      const fuelUsed = seg.length_m * car["fuel_consumption_l/m"];
-      fuelUsedLap += fuelUsed;
-
-      output.push({
+      out.push({
         id: seg.id,
         type: "straight",
-        "target_m/s": round(targetSpeed),
-        brake_start_m_before_next: round(brakeDistance),
+        "target_m/s": round2(target),
+        brake_start_m_before_next: round2(bd),
       });
-
-      currentSpeed = safeCornerSpeed;
+      speed = cs;
     } else {
-      const fuelUsed = seg.length_m * car["fuel_consumption_l/m"];
-      fuelUsedLap += fuelUsed;
-
-      output.push({
-        id: seg.id,
-        type: "corner",
-      });
+      fuelUsed += fuelUsedSegment(speed, speed, seg.length_m);
+      out.push({ id: seg.id, type: "corner" });
     }
   }
 
-  return {
-    segments: output,
-    exitSpeed: currentSpeed,
-    fuelUsedLap,
-  };
+  return { segments: out, exitSpeed: speed, fuelUsed };
 }
 
-// ---------------- RACE ----------------
-function generateAllLaps() {
-  const laps = [];
+// Pre-simulate one lap to know exact fuel per lap
+function computeExactFuelPerLap(compound) {
+  return simulateLap(track.segments, 0, compound).fuelUsed;
+}
 
-  let currentSpeed = 0;
-  let fuelRemaining = car["initial_fuel_l"];
+// ── Main ─────────────────────────────────────────────────────────────────────
+const bestSet = pickBestCompound();
+const compound = bestSet.compound;
+const initialTyreId = bestSet.ids[0];
 
-  for (let lap = 1; lap <= race.laps; lap++) {
-    const lapResult = generateLapSegments(track.segments, currentSpeed);
+// Pre-compute per-lap fuel cost (approximately; first lap starts at 0, rest at exitSpeed)
+// We'll track exactly during the race loop.
+const laps = [];
+let currentSpeed = 0;
+let fuelRemaining = car["initial_fuel_l"];
 
-    let pit = { enter: false };
+// We want to use exactly soft_cap total. Track cumulative fuel used.
+const softCap = race["fuel_soft_cap_limit_l"];
 
-    // Check if we can finish next lap
-    if (fuelRemaining - lapResult.fuelUsedLap < getFuelPerLap()) {
-      // Need to refuel
+for (let lap = 1; lap <= race.laps; lap++) {
+  const lapResult = simulateLap(track.segments, currentSpeed, compound);
+  const lapsLeft = race.laps - lap; // laps remaining after this one
 
-      const fuelNeededToFinish = getFuelPerLap() * (race.laps - lap + 1);
+  // Fuel after consuming this lap
+  const fuelAfterLap = fuelRemaining - lapResult.fuelUsed;
 
-      let fuelToAdd = fuelNeededToFinish - fuelRemaining;
+  // Decide if we need to pit for fuel
+  // Pit if we won't have enough fuel to complete all remaining laps
+  const fuelNeededToFinish = lapResult.fuelUsed * lapsLeft; // approximate using this lap's cost
+  let pit = { enter: false };
 
-      // clamp to tank capacity
-      fuelToAdd = Math.min(
-        fuelToAdd,
-        car["fuel_tank_capacity_l"] - fuelRemaining,
-      );
+  if (fuelAfterLap < fuelNeededToFinish && lapsLeft > 0) {
+    // Refuel: add exactly what we need to reach the end
+    // Aim to use exactly softCap total (or as close as possible)
+    const targetRefuel = Math.min(
+      fuelNeededToFinish - fuelAfterLap,
+      car["fuel_tank_capacity_l"] - fuelAfterLap,
+    );
+    const refuelAmount = Math.max(0, round2(targetRefuel));
 
-      fuelToAdd = Math.max(0, fuelToAdd);
-
-      if (fuelToAdd > 0) {
-        pit = {
-          enter: true,
-          fuel_refuel_amount_l: round(fuelToAdd),
-        };
-
-        fuelRemaining += fuelToAdd;
-
-        // reset speed after pit
-        currentSpeed = race["pit_exit_speed_m/s"];
-      }
+    if (refuelAmount > 0) {
+      pit = {
+        enter: true,
+        fuel_refuel_amount_l: refuelAmount,
+      };
+      fuelRemaining = fuelAfterLap + refuelAmount;
+      currentSpeed = race["pit_exit_speed_m/s"];
     }
-
-    // consume fuel AFTER pit decision
-    fuelRemaining -= lapResult.fuelUsedLap;
-
-    laps.push({
-      lap,
-      segments: lapResult.segments,
-      pit,
-    });
-
-    if (!pit.enter) {
-      currentSpeed = lapResult.exitSpeed;
-    }
+  } else {
+    fuelRemaining = fuelAfterLap;
+    currentSpeed = lapResult.exitSpeed;
   }
 
-  return laps;
+  if (!pit.enter) fuelRemaining = fuelAfterLap;
+
+  laps.push({ lap, segments: lapResult.segments, pit });
 }
 
-// ---------------- OUTPUT ----------------
-const output = {
-  initial_tyre_id: getInitialTyreId(chosenCompound),
-  laps: generateAllLaps(),
-};
+writeOutput({ initial_tyre_id: initialTyreId, laps });
+console.log(`Level 2 done. Compound: ${compound}`);
 
-writeOutput(output);
-console.log("Generated output.txt successfully");

@@ -1,3 +1,28 @@
+/**
+ * ENTELECT GRAND PRIX - LEVEL 4 (OPTIMIZED)
+ *
+ * Score = base_score + tyre_bonus + fuel_bonus
+ *   base_score  = 500000 * (time_ref / race_time)^3  → minimize time
+ *   tyre_bonus  = 100000 * Σ(degradation per tyre used) - 50000 * blowouts
+ *               → maximize degradation used WITHOUT blowing out
+ *   fuel_bonus  = -500000*(1 - fuel_used/soft_cap)^2 + 500000
+ *               → use as close to soft_cap fuel as possible
+ *
+ * Key insight on tyre_bonus:
+ *   Every tyre used at degradation 0.99 scores 99 000 points.
+ *   A blowout at degradation 1.0 scores 100 000 - 50 000 = 50 000 points.
+ *   So NEVER blow out — pit just before 1.0 degradation.
+ *
+ * Strategy:
+ * 1. Each lap, simulate with current tyre state.
+ * 2. If projected degradation after next lap >= PIT_THRESHOLD → pit.
+ * 3. On pit: choose a new tyre compound appropriate for current weather.
+ *    Prefer compounds that won't blow out before their stint ends.
+ * 4. Fuel: refuel the minimum amount needed to reach end (or next pit stop).
+ * 5. Weather: always use the best compound for current weather to maximize
+ *    corner speeds (reduces race time = better base_score).
+ */
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -5,562 +30,312 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ---------------- FILE IO ----------------
-function readFileData() {
-  const filePath = path.join(__dirname, "4.txt");
-  const data = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(data);
+function readFileData(file) {
+  return JSON.parse(fs.readFileSync(path.join(__dirname, file), "utf8"));
 }
-
 function writeOutput(data) {
-  const filePath = path.join(__dirname, "output.txt");
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
+  fs.writeFileSync(path.join(__dirname, "output.txt"), JSON.stringify(data, null, 2), "utf8");
 }
 
-function round(value) {
-  return Number(value.toFixed(2));
-}
+const data = readFileData("4.txt");
+const { car, race, track, available_sets, weather, tyres } = data;
+const weatherConditions = weather.conditions;
+const tyreProperties = tyres.properties;
 
-// ---------------- LOAD DATA ----------------
-const data = readFileData();
+function round2(v) { return Math.round(v * 100) / 100; }
 
-const car = data.car;
-const race = data.race;
-const track = data.track;
-const tyreProperties = data.tyres.properties;
-const availableSets = data.available_sets;
-const weatherConditions = data.weather.conditions;
-
-// ---------------- CONSTANTS ----------------
-// Level 4 degradation constants from problem statement
-const K_STRAIGHT = 0.0000166;
-const K_BRAKING = 0.0398;
-const K_CORNER = 0.000265;
+// ── Constants ────────────────────────────────────────────────────────────────
 const G = 9.8;
+const K_STRAIGHT = 0.0000166;
+const K_BRAKING  = 0.0398;
+const K_CORNER   = 0.000265;
+const K_BASE_FUEL = 0.0005;
+const K_DRAG_FUEL = 0.0000000015;
 
-// Base friction coefficients from problem statement table
-const BASE_FRICTION = {
-  Soft: 1.8,
-  Medium: 1.7,
-  Hard: 1.6,
-  Intermediate: 1.2,
-  Wet: 1.1,
-};
+// Base friction coefficients (from problem statement)
+const BASE_FRICTION = { Soft: 1.8, Medium: 1.7, Hard: 1.6, Intermediate: 1.2, Wet: 1.1 };
 
-// Safety buffers so we do not drive right at the theoretical limit
-const CORNER_SPEED_SAFETY_FACTOR = 0.97;
-const MAX_ALLOWED_DEGRADATION_BEFORE_PIT = 0.92;
+// Pit just before blowout — leave a tiny buffer so we never blow out
+const PIT_DEGRADATION_THRESHOLD = 0.93;
 
-// ---------------- WEATHER ----------------
-function getWeatherCycleDuration() {
-  return weatherConditions.reduce((sum, weather) => sum + weather.duration_s, 0);
-}
+// ── Weather cycling ──────────────────────────────────────────────────────────
+const CYCLE_DURATION = weatherConditions.reduce((s, w) => s + w.duration_s, 0);
 
-function getWeatherAtTime(timeSeconds) {
-  const cycleDuration = getWeatherCycleDuration();
-  const timeInCycle = timeSeconds % cycleDuration;
-
+function getWeatherAtTime(t) {
+  const tInCycle = t % CYCLE_DURATION;
   let elapsed = 0;
-  for (const weather of weatherConditions) {
-    elapsed += weather.duration_s;
-    if (timeInCycle < elapsed) {
-      return weather;
-    }
+  for (const w of weatherConditions) {
+    elapsed += w.duration_s;
+    if (tInCycle < elapsed) return w;
   }
-
   return weatherConditions[weatherConditions.length - 1];
 }
 
-function getFrictionMultiplierKey(condition) {
-  const map = {
-    dry: "dry_friction_multiplier",
-    cold: "cold_friction_multiplier",
-    light_rain: "light_rain_friction_multiplier",
-    heavy_rain: "heavy_rain_friction_multiplier",
-  };
-  return map[condition];
-}
+const WEATHER_FRICTION_KEY = {
+  dry:        "dry_friction_multiplier",
+  cold:       "cold_friction_multiplier",
+  light_rain: "light_rain_friction_multiplier",
+  heavy_rain: "heavy_rain_friction_multiplier",
+};
+const WEATHER_DEG_KEY = {
+  dry:        "dry_degradation",
+  cold:       "cold_degradation",
+  light_rain: "light_rain_degradation",
+  heavy_rain: "heavy_rain_degradation",
+};
 
-function getDegradationRateKey(condition) {
-  const map = {
-    dry: "dry_degradation",
-    cold: "cold_degradation",
-    light_rain: "light_rain_degradation",
-    heavy_rain: "heavy_rain_degradation",
-  };
-  return map[condition];
-}
-
-function getRecommendedCompound(condition) {
-  if (condition === "heavy_rain") return "Wet";
-  if (condition === "light_rain") return "Intermediate";
-  if (condition === "cold") return "Medium";
-  return "Soft";
-}
-
-// ---------------- TYRE SETS ----------------
-function buildTyreInventory() {
-  const inventory = {};
-
-  for (const set of availableSets) {
-    for (const id of set.ids) {
-      inventory[id] = {
-        id,
-        compound: set.compound,
-        degradation: 0,
-        used: false,
-      };
-    }
+// ── Tyre inventory ───────────────────────────────────────────────────────────
+const inventory = {};
+for (const set of available_sets) {
+  for (const id of set.ids) {
+    inventory[id] = { id, compound: set.compound, degradation: 0, used: false };
   }
-
-  return inventory;
 }
 
-function getTyreFriction(compound, degradation, weatherCondition) {
+function unusedTyres() { return Object.values(inventory).filter(t => !t.used); }
+
+// ── Tyre physics ─────────────────────────────────────────────────────────────
+function getTyreFriction(compound, degradation, condition) {
   const props = tyreProperties[compound];
-  const frictionMultiplierKey = getFrictionMultiplierKey(weatherCondition);
-
-  const base = BASE_FRICTION[compound];
-  const effectiveBase = Math.max(0.05, base - degradation);
-  return effectiveBase * props[frictionMultiplierKey];
+  const baseFric = BASE_FRICTION[compound];
+  const effectiveBase = Math.max(0.05, baseFric - degradation);
+  return effectiveBase * props[WEATHER_FRICTION_KEY[condition]];
 }
 
-function getTyreDegradationRate(compound, weatherCondition) {
-  const props = tyreProperties[compound];
-  const degradationKey = getDegradationRateKey(weatherCondition);
-  return props[degradationKey];
+function getDegRate(compound, condition) {
+  return tyreProperties[compound][WEATHER_DEG_KEY[condition]];
 }
 
-function getRemainingTyreLife(tyreState) {
-  return Math.max(0, 1 - tyreState.degradation);
+function straightDeg(compound, condition, length) {
+  return getDegRate(compound, condition) * length * K_STRAIGHT;
 }
 
-function chooseInitialTyreId(inventory) {
-  const startingWeather = getWeatherAtTime(0);
-  const preferredCompound = getRecommendedCompound(startingWeather.condition);
-
-  const preferred = Object.values(inventory).find(
-    (t) => !t.used && t.compound === preferredCompound
-  );
-  if (preferred) return preferred.id;
-
-  const fallback = Object.values(inventory).find((t) => !t.used);
-  if (!fallback) {
-    throw new Error("No tyre sets available");
-  }
-
-  return fallback.id;
+function brakingDeg(compound, condition, vHigh, vLow) {
+  const rate = getDegRate(compound, condition);
+  return Math.max(0, ((vHigh / 100) ** 2 - (vLow / 100) ** 2)) * K_BRAKING * rate;
 }
 
-function chooseBestPitTyre(inventory, raceTime, lapsRemaining) {
-  const weatherNow = getWeatherAtTime(raceTime);
-  const weatherSoon = getWeatherAtTime(raceTime + 1800);
-
-  const preferredNow = getRecommendedCompound(weatherNow.condition);
-  const preferredSoon = getRecommendedCompound(weatherSoon.condition);
-
-  const unusedTyres = Object.values(inventory).filter((t) => !t.used);
-
-  const exactNow = unusedTyres.find((t) => t.compound === preferredNow);
-  if (exactNow) return exactNow.id;
-
-  const exactSoon = unusedTyres.find((t) => t.compound === preferredSoon);
-  if (exactSoon) return exactSoon.id;
-
-  const medium = unusedTyres.find((t) => t.compound === "Medium");
-  if (medium) return medium.id;
-
-  const hard = unusedTyres.find((t) => t.compound === "Hard");
-  if (hard) return hard.id;
-
-  if (unusedTyres.length > 0) return unusedTyres[0].id;
-
-  return null;
+function cornerDeg(compound, condition, speed, radius) {
+  return K_CORNER * (speed ** 2 / radius) * getDegRate(compound, condition);
 }
 
-// ---------------- PHYSICS ----------------
-function getSafeCornerSpeed(radius, tyreState, weatherCondition) {
-  const friction = getTyreFriction(
-    tyreState.compound,
-    tyreState.degradation,
-    weatherCondition
-  );
-
-  const theoretical = Math.sqrt(friction * G * radius) + car["crawl_constant_m/s"];
-  return theoretical * CORNER_SPEED_SAFETY_FACTOR;
+// ── Physics ──────────────────────────────────────────────────────────────────
+function safeCornerSpeed(radius, compound, degradation, condition) {
+  const friction = getTyreFriction(compound, degradation, condition);
+  return Math.sqrt(Math.max(0, friction * G * radius)) + car["crawl_constant_m/s"];
 }
 
-function solveTargetSpeed({
-  entrySpeed,
-  cornerSpeed,
-  straightLength,
-  accel,
-  brake,
-  maxSpeed,
-}) {
-  const numerator =
-    straightLength +
-    entrySpeed ** 2 / (2 * accel) +
-    cornerSpeed ** 2 / (2 * brake);
-
-  const denominator = 1 / (2 * accel) + 1 / (2 * brake);
-  const solved = Math.sqrt(Math.max(0, numerator / denominator));
-
-  return Math.min(solved, maxSpeed);
+function solveMaxPeakSpeed({ entrySpeed, cornerSpeed, length, accel, brake, maxSpeed }) {
+  const num = length + entrySpeed ** 2 / (2 * accel) + cornerSpeed ** 2 / (2 * brake);
+  const den = 1 / (2 * accel) + 1 / (2 * brake);
+  return Math.min(Math.sqrt(Math.max(0, num / den)), maxSpeed);
 }
 
-function getBrakeDistance(targetSpeed, cornerSpeed, brake) {
-  return Math.max(0, (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake));
+function brakeDistance(target, cs, brake) {
+  return Math.max(0, (target ** 2 - cs ** 2) / (2 * brake));
 }
 
-function getStraightTime({
-  entrySpeed,
-  targetSpeed,
-  cornerSpeed,
-  straightLength,
-  accel,
-  brake,
-}) {
-  const accelDistance = Math.max(
-    0,
-    (targetSpeed ** 2 - entrySpeed ** 2) / (2 * accel)
-  );
-
-  const brakeDistance = Math.max(
-    0,
-    (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake)
-  );
-
-  const cruiseDistance = Math.max(0, straightLength - accelDistance - brakeDistance);
-
-  let time = 0;
-
-  if (targetSpeed > entrySpeed) {
-    time += (targetSpeed - entrySpeed) / accel;
-  }
-
-  if (cruiseDistance > 0) {
-    time += cruiseDistance / Math.max(targetSpeed, 0.0001);
-  }
-
-  if (targetSpeed > cornerSpeed) {
-    time += (targetSpeed - cornerSpeed) / brake;
-  }
-
-  return time;
+function segTime({ entrySpeed, targetSpeed, cornerSpeed, length, accel, brake }) {
+  const accelDist = Math.max(0, (targetSpeed ** 2 - entrySpeed ** 2) / (2 * accel));
+  const brakeDist = Math.max(0, (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake));
+  const cruiseDist = Math.max(0, length - accelDist - brakeDist);
+  let t = 0;
+  if (targetSpeed > entrySpeed) t += (targetSpeed - entrySpeed) / accel;
+  if (cruiseDist > 0) t += cruiseDist / Math.max(targetSpeed, 1e-4);
+  if (targetSpeed > cornerSpeed) t += (targetSpeed - cornerSpeed) / brake;
+  return t;
 }
 
-function getFuelUsed(initialSpeed, finalSpeed, distance) {
-  const Kbase = 0.0005;
-  const Kdrag = 0.0000000015;
-  const avgSpeed = (initialSpeed + finalSpeed) / 2;
-  return (Kbase + Kdrag * avgSpeed ** 2) * distance;
+function fuelUsed(vi, vf, dist) {
+  const avg = (vi + vf) / 2;
+  return (K_BASE_FUEL + K_DRAG_FUEL * avg ** 2) * dist;
 }
 
-function getNextCornerIndex(segments, startIndex) {
-  for (let i = startIndex + 1; i < segments.length; i++) {
+function getNextCornerIndex(segments, from) {
+  for (let i = from + 1; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
-
   for (let i = 0; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
-
   return -1;
 }
 
-// ---------------- TYRE DEGRADATION ----------------
-function getStraightDegradation(compound, weatherCondition, length) {
-  const rate = getTyreDegradationRate(compound, weatherCondition);
-  return rate * length * K_STRAIGHT;
-}
-
-function getBrakingDegradation(compound, weatherCondition, initialSpeed, finalSpeed) {
-  const rate = getTyreDegradationRate(compound, weatherCondition);
-  const value =
-    (initialSpeed / 100) ** 2 - (finalSpeed / 100) ** 2;
-
-  return Math.max(0, value) * K_BRAKING * rate;
-}
-
-function getCornerDegradation(compound, weatherCondition, speed, radius) {
-  const rate = getTyreDegradationRate(compound, weatherCondition);
-  return K_CORNER * ((speed ** 2) / radius) * rate;
-}
-
-// ---------------- SIMULATION ----------------
-function cloneTyreState(tyreState) {
-  return {
-    id: tyreState.id,
-    compound: tyreState.compound,
-    degradation: tyreState.degradation,
-    used: tyreState.used,
-  };
-}
-
-function simulateLap({
-  entrySpeed,
-  tyreState,
-  lapStartTime,
-}) {
-  const output = [];
-  let currentSpeed = entrySpeed;
+// ── Lap simulation ───────────────────────────────────────────────────────────
+function simulateLap({ entrySpeed, tyreId, lapStartTime }) {
+  const tyreState = { ...inventory[tyreId] }; // working copy
+  const out = [];
+  let speed = entrySpeed;
   let lapTime = 0;
-  let fuelUsedLap = 0;
-  let workingTyre = cloneTyreState(tyreState);
+  let lapFuel = 0;
   let blewOut = false;
 
   for (let i = 0; i < track.segments.length; i++) {
     const seg = track.segments[i];
-    const currentWeather = getWeatherAtTime(lapStartTime + lapTime);
-
-    const effectiveAccel =
-      car["accel_m/se2"] * currentWeather.acceleration_multiplier;
-    const effectiveBrake =
-      car["brake_m/se2"] * currentWeather.deceleration_multiplier;
+    const w = getWeatherAtTime(lapStartTime + lapTime);
+    const effAccel = car["accel_m/se2"] * w.acceleration_multiplier;
+    const effBrake = car["brake_m/se2"] * w.deceleration_multiplier;
 
     if (seg.type === "straight") {
-      const nextCornerIndex = getNextCornerIndex(track.segments, i);
-      if (nextCornerIndex === -1) {
-        throw new Error("Track must contain at least one corner");
-      }
-
-      const nextCorner = track.segments[nextCornerIndex];
-      const safeCornerSpeed = getSafeCornerSpeed(
-        nextCorner.radius_m,
-        workingTyre,
-        currentWeather.condition
-      );
-
-      const targetSpeed = solveTargetSpeed({
-        entrySpeed: currentSpeed,
-        cornerSpeed: safeCornerSpeed,
-        straightLength: seg.length_m,
-        accel: effectiveAccel,
-        brake: effectiveBrake,
-        maxSpeed: car["max_speed_m/s"],
+      const ni = getNextCornerIndex(track.segments, i);
+      const cs = safeCornerSpeed(track.segments[ni].radius_m, tyreState.compound, tyreState.degradation, w.condition);
+      const target = solveMaxPeakSpeed({
+        entrySpeed: speed, cornerSpeed: cs, length: seg.length_m,
+        accel: effAccel, brake: effBrake, maxSpeed: car["max_speed_m/s"],
       });
+      const bd = brakeDistance(target, cs, effBrake);
+      const dt = segTime({ entrySpeed: speed, targetSpeed: target, cornerSpeed: cs, length: seg.length_m, accel: effAccel, brake: effBrake });
 
-      const brakeDistance = getBrakeDistance(
-        targetSpeed,
-        safeCornerSpeed,
-        effectiveBrake
-      );
+      lapTime += dt;
+      lapFuel += fuelUsed(speed, target, seg.length_m);
 
-      const straightTime = getStraightTime({
-        entrySpeed: currentSpeed,
-        targetSpeed,
-        cornerSpeed: safeCornerSpeed,
-        straightLength: seg.length_m,
-        accel: effectiveAccel,
-        brake: effectiveBrake,
-      });
+      // Degradation: straight + braking
+      tyreState.degradation += straightDeg(tyreState.compound, w.condition, seg.length_m);
+      tyreState.degradation += brakingDeg(tyreState.compound, w.condition, target, cs);
+      if (tyreState.degradation >= 1) blewOut = true;
 
-      fuelUsedLap += getFuelUsed(currentSpeed, targetSpeed, seg.length_m);
-      lapTime += straightTime;
-
-      const straightDeg = getStraightDegradation(
-        workingTyre.compound,
-        currentWeather.condition,
-        seg.length_m
-      );
-
-      const brakingDeg = getBrakingDegradation(
-        workingTyre.compound,
-        currentWeather.condition,
-        targetSpeed,
-        safeCornerSpeed
-      );
-
-      workingTyre.degradation += straightDeg + brakingDeg;
-
-      if (workingTyre.degradation >= 1) {
-        blewOut = true;
-      }
-
-      output.push({
-        id: seg.id,
-        type: "straight",
-        "target_m/s": round(targetSpeed),
-        brake_start_m_before_next: round(brakeDistance),
-      });
-
-      currentSpeed = safeCornerSpeed;
+      out.push({ id: seg.id, type: "straight", "target_m/s": round2(target), brake_start_m_before_next: round2(bd) });
+      speed = cs;
     } else {
-      const currentWeatherForCorner = getWeatherAtTime(lapStartTime + lapTime);
-
-      const cornerTime = seg.length_m / Math.max(currentSpeed, 0.0001);
+      const cornerTime = seg.length_m / Math.max(speed, 1e-4);
       lapTime += cornerTime;
-      fuelUsedLap += getFuelUsed(currentSpeed, currentSpeed, seg.length_m);
+      lapFuel += fuelUsed(speed, speed, seg.length_m);
 
-      const cornerDeg = getCornerDegradation(
-        workingTyre.compound,
-        currentWeatherForCorner.condition,
-        currentSpeed,
-        seg.radius_m
+      tyreState.degradation += cornerDeg(tyreState.compound, w.condition, speed, seg.radius_m);
+      if (tyreState.degradation >= 1) blewOut = true;
+
+      out.push({ id: seg.id, type: "corner" });
+    }
+  }
+
+  return { segments: out, exitSpeed: speed, lapTime, lapFuel, tyreAfterLap: tyreState, blewOut };
+}
+
+// ── Pit tyre selection ───────────────────────────────────────────────────────
+function bestCompoundForWeather(condition) {
+  const key = WEATHER_FRICTION_KEY[condition];
+  let best = null, bestF = -Infinity;
+  for (const set of available_sets) {
+    const props = tyreProperties[set.compound];
+    // Use base friction * multiplier (at degradation=0, fresh tyre)
+    const f = BASE_FRICTION[set.compound] * props[key];
+    if (f > bestF) { bestF = f; best = set.compound; }
+  }
+  return best;
+}
+
+/**
+ * Choose the best unused tyre to mount next.
+ * Priority:
+ *  1. Weather-appropriate compound (best friction for current/upcoming weather)
+ *  2. Among weather-appropriate, prefer the one that can run longest (lowest deg rate)
+ *  3. Fallback to any unused tyre
+ */
+function choosePitTyre(raceTime, lapTime) {
+  const weatherNow = getWeatherAtTime(raceTime + lapTime);
+  const ideal = bestCompoundForWeather(weatherNow.condition);
+
+  const unused = unusedTyres();
+  // First try: exact match to ideal compound
+  const match = unused.find(t => t.compound === ideal);
+  if (match) return match.id;
+
+  // Fallback: pick the compound with best friction in current weather
+  let bestId = null, bestF = -Infinity;
+  for (const t of unused) {
+    const f = BASE_FRICTION[t.compound] * tyreProperties[t.compound][WEATHER_FRICTION_KEY[weatherNow.condition]];
+    if (f > bestF) { bestF = f; bestId = t.id; }
+  }
+  return bestId;
+}
+
+// ── Initial tyre ─────────────────────────────────────────────────────────────
+function chooseInitialTyre() {
+  const w = getWeatherAtTime(0);
+  const ideal = bestCompoundForWeather(w.condition);
+  const match = unusedTyres().find(t => t.compound === ideal);
+  return match ? match.id : unusedTyres()[0].id;
+}
+
+// ── Race ─────────────────────────────────────────────────────────────────────
+const softCap = race["fuel_soft_cap_limit_l"];
+const initialTyreId = chooseInitialTyre();
+inventory[initialTyreId].used = true;
+
+const laps = [];
+let raceTime = 0;
+let currentSpeed = 0;
+let fuelRemaining = car["initial_fuel_l"];
+let currentTyreId = initialTyreId;
+
+for (let lap = 1; lap <= race.laps; lap++) {
+  const lapResult = simulateLap({ entrySpeed: currentSpeed, tyreId: currentTyreId, lapStartTime: raceTime });
+
+  // Apply degradation tentatively
+  inventory[currentTyreId].degradation = lapResult.tyreAfterLap.degradation;
+
+  const lapsLeft = race.laps - lap;
+  const fuelAfterLap = fuelRemaining - lapResult.lapFuel;
+
+  // ── Pit decision ─────────────────────────────────────────────────────────
+  const degradationAfterLap = lapResult.tyreAfterLap.degradation;
+
+  // Pit if tyre has crossed the safety threshold (prevents blowouts)
+  const willBlowNextLap = degradationAfterLap >= PIT_DEGRADATION_THRESHOLD;
+
+  // Weather-driven tyre change
+  const weatherNext = getWeatherAtTime(raceTime + lapResult.lapTime);
+  const idealNext = bestCompoundForWeather(weatherNext.condition);
+  const weatherTyreChange = idealNext !== inventory[currentTyreId].compound && lapsLeft > 0;
+
+  // Fuel check
+  const estimatedFuelPerLap = lapResult.lapFuel;
+  const fuelNeededToFinish = estimatedFuelPerLap * lapsLeft;
+  const needFuel = fuelAfterLap < fuelNeededToFinish && lapsLeft > 0;
+
+  const needPit = (willBlowNextLap || lapResult.blewOut || weatherTyreChange || needFuel) && lapsLeft > 0;
+
+  let pit = { enter: false };
+
+  if (needPit) {
+    pit.enter = true;
+
+    // Tyre change?
+    const newTyreId = choosePitTyre(raceTime, lapResult.lapTime);
+    if (newTyreId && newTyreId !== currentTyreId) {
+      inventory[newTyreId].used = true;
+      pit.tyre_change_set_id = newTyreId;
+    }
+
+    // Fuel: refuel just enough to reach end (minimize pitstop time = minimize race time)
+    if (needFuel || fuelAfterLap < estimatedFuelPerLap * 1.1) {
+      const fuelTarget = Math.min(
+        car["fuel_tank_capacity_l"],
+        fuelAfterLap + fuelNeededToFinish + estimatedFuelPerLap * 0.05 // tiny buffer
       );
-
-      workingTyre.degradation += cornerDeg;
-
-      if (workingTyre.degradation >= 1) {
-        blewOut = true;
-      }
-
-      output.push({
-        id: seg.id,
-        type: "corner",
-      });
+      const refuelAmt = round2(Math.max(0, Math.min(fuelTarget - fuelAfterLap, car["fuel_tank_capacity_l"] - fuelAfterLap)));
+      if (refuelAmt > 0) pit.fuel_refuel_amount_l = refuelAmt;
     }
   }
 
-  return {
-    segments: output,
-    exitSpeed: currentSpeed,
-    lapTime,
-    fuelUsedLap,
-    tyreAfterLap: workingTyre,
-    blewOut,
-  };
-}
+  laps.push({ lap, segments: lapResult.segments, pit });
 
-// ---------------- PIT STRATEGY ----------------
-function shouldPit({
-  currentFuel,
-  lapFuelEstimate,
-  currentTyreState,
-  tyreAfterLap,
-  raceTime,
-  lapTime,
-  lapsRemaining,
-  inventory,
-}) {
-  const weatherNow = getWeatherAtTime(raceTime);
-  const weatherNext = getWeatherAtTime(raceTime + lapTime);
+  fuelRemaining = fuelAfterLap;
+  raceTime += lapResult.lapTime;
 
-  const preferredNow = getRecommendedCompound(weatherNow.condition);
-  const preferredNext = getRecommendedCompound(weatherNext.condition);
-
-  const tyreNeedsChange =
-    tyreAfterLap.degradation >= MAX_ALLOWED_DEGRADATION_BEFORE_PIT ||
-    currentTyreState.compound !== preferredNow ||
-    currentTyreState.compound !== preferredNext ||
-    tyreAfterLap.blewOut === true;
-
-  const fuelAfterLap = currentFuel - lapFuelEstimate;
-  const lowFuel = fuelAfterLap < lapFuelEstimate * 1.3;
-
-  return tyreNeedsChange || lowFuel;
-}
-
-function getRefuelAmount(currentFuel, targetFuel) {
-  const capacityLeft = car["fuel_tank_capacity_l"] - currentFuel;
-  return Math.max(0, Math.min(targetFuel - currentFuel, capacityLeft));
-}
-
-// ---------------- RACE ----------------
-function generateRacePlan() {
-  const inventory = buildTyreInventory();
-
-  const initialTyreId = chooseInitialTyreId(inventory);
-  inventory[initialTyreId].used = true;
-
-  const laps = [];
-
-  let currentSpeed = 0;
-  let currentFuel = car["initial_fuel_l"];
-  let raceTime = 0;
-  let currentTyreId = initialTyreId;
-
-  for (let lap = 1; lap <= race.laps; lap++) {
-    const currentTyreState = inventory[currentTyreId];
-
-    const lapResult = simulateLap({
-      entrySpeed: currentSpeed,
-      tyreState: currentTyreState,
-      lapStartTime: raceTime,
-    });
-
-    // Tentatively apply tyre degradation from this lap
-    inventory[currentTyreId].degradation = lapResult.tyreAfterLap.degradation;
-
-    let pit = { enter: false };
-    const lapsRemaining = race.laps - lap;
-
-    const needPit =
-      lapResult.blewOut ||
-      shouldPit({
-        currentFuel,
-        lapFuelEstimate: lapResult.fuelUsedLap,
-        currentTyreState,
-        tyreAfterLap: lapResult.tyreAfterLap,
-        raceTime,
-        lapTime: lapResult.lapTime,
-        lapsRemaining,
-        inventory,
-      });
-
-    const fuelAfterLap = currentFuel - lapResult.fuelUsedLap;
-
-    if (needPit && lap < race.laps) {
-      pit.enter = true;
-
-      const nextTyreId = chooseBestPitTyre(inventory, raceTime + lapResult.lapTime, lapsRemaining);
-
-      if (nextTyreId && nextTyreId !== currentTyreId) {
-        inventory[nextTyreId].used = true;
-        pit.tyre_change_set_id = nextTyreId;
-      }
-
-      const desiredFuelAfterPit = Math.min(135, car["fuel_tank_capacity_l"]);
-      const fuelRefuelAmount = getRefuelAmount(fuelAfterLap, desiredFuelAfterPit);
-
-      if (fuelRefuelAmount > 0) {
-        pit.fuel_refuel_amount_l = round(fuelRefuelAmount);
-      }
-    }
-
-    laps.push({
-      lap,
-      segments: lapResult.segments,
-      pit,
-    });
-
-    currentFuel = fuelAfterLap;
-    raceTime += lapResult.lapTime;
-
-    if (pit.enter) {
-      const pitBase = race["base_pit_stop_time_s"];
-      const tyreSwapTime = pit.tyre_change_set_id
-        ? race["pit_tyre_swap_time_s"]
-        : 0;
-      const refuelTime = pit.fuel_refuel_amount_l
-        ? pit.fuel_refuel_amount_l / race["pit_refuel_rate_l/s"]
-        : 0;
-
-      raceTime += pitBase + tyreSwapTime + refuelTime;
-
-      if (pit.fuel_refuel_amount_l) {
-        currentFuel += pit.fuel_refuel_amount_l;
-      }
-
-      if (pit.tyre_change_set_id) {
-        currentTyreId = pit.tyre_change_set_id;
-      }
-
-      currentSpeed = race["pit_exit_speed_m/s"];
-    } else {
-      currentSpeed = lapResult.exitSpeed;
-    }
+  if (pit.enter) {
+    const pitBase = race["base_pit_stop_time_s"];
+    const swapTime = pit.tyre_change_set_id ? race["pit_tyre_swap_time_s"] : 0;
+    const refTime = pit.fuel_refuel_amount_l ? pit.fuel_refuel_amount_l / race["pit_refuel_rate_l/s"] : 0;
+    raceTime += pitBase + swapTime + refTime;
+    if (pit.fuel_refuel_amount_l) fuelRemaining += pit.fuel_refuel_amount_l;
+    if (pit.tyre_change_set_id) currentTyreId = pit.tyre_change_set_id;
+    currentSpeed = race["pit_exit_speed_m/s"];
+  } else {
+    currentSpeed = lapResult.exitSpeed;
   }
-
-  return {
-    initial_tyre_id: initialTyreId,
-    laps,
-  };
 }
 
-// ---------------- OUTPUT ----------------
-const output = generateRacePlan();
-writeOutput(output);
+writeOutput({ initial_tyre_id: initialTyreId, laps });
+console.log(`Level 4 done. Initial tyre: ${initialTyreId} (${inventory[initialTyreId].compound})`);
 
-console.log("Generated Level 4 output.txt successfully");
