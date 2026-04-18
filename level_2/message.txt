@@ -1,0 +1,143 @@
+Rank   | Team Name                           | Total Score
+-----------------------------------------------------------------
+1      | 'Neomix'                            | 8397504.0
+2      | 'Code Blooded'                      | 7823963.0
+3      | 'DataPulse'                         | 7813882.0
+4      | 'AI-ght Bet'                        | 7709275.0
+5      | 'Hack Hounds'                       | 7534266.0
+6      | null.isLoser();                     | 6954522.0
+7      | 'Halaal Injera'                     | 6608921.0
+8      | 'Nova Tech'                         | 6200585.0
+9      | 'JammyDodger'                       | 6182285.0
+10     | 'OpenClause'                        | 6147215.0
+11     | 'OROS GANG'                         | 6123533.0
+12     | 'CO coders'                         | 6120487.0
+13     | 'AlgoRhythms'                       | 6076613.0
+14     | 'Binary Brothers'                   | 5991163.0
+15     | Off-By-One                          | 5584081.0
+16     | 'The Engineers'                     | 5426490.0
+17     | PCS                                 | 5401917.0
+18     | 'Ctrl Alt Defeat'                   | 5302508.0
+19     | RGT squad                           | 5215855.0
+20     | 'team_name.py'                      | 5045898.0
+21     | 'Valgrind'                          | 4999567.0
+22     | 'Six7'                              | 4987004.0
+23     | 'Bots'                              | 4880569.0
+24     | 'TemporaryName2026'                 | 4692907.0
+25     | 'JuveniQ'                           | 4652032.0
+26     | Ironclad AI                         | 4651796.0
+27     | 'Cache Me If You Can'               | 4567670.0
+28     | 'chmod 777'                         | 4547441.0
+29     | 'Kryptic code'                      | 4461002.0
+30     | 'Coding on Vibes'                   | 4425740.0
+31     | 'Full-Stack Attack '                | 4360039.0
+32     | 'Bebugging Masters'                 | 4315377.0
+33     | 'The sudo team'                     | 4246015.0
+34     | 'coding for soup'                   | 4028539.0
+35     | 'Carthago delenda est'              | 3932199.0
+36     | 'The Algorithm Alliance'            | 3930767.0
+37     | Array of Sunshine                   | 3920630.0
+38     | 'Incredible Connection'             | 3918226.0
+39     | 'Potential Men'                     | 3690315.0
+40     | 'uniqwa coder team'                 | 3658522.0
+41     | 'Tempest'                           | 3605845.0
+42     | 'DevSupport'                        | 3447973.0
+43     | 'Git Merchants'                     | 3426631.0
+44     | '404 Avengers'                      | 3351715.0
+45     | 'Code of Duty'                      | 3316516.0
+46     | 'LossFunction:Self'                 | 3289790.0
+47     | 'Bonang'                            | 3205459.0
+48     | 'MagMon'                            | 3203233.0
+49     | 'DevRift'                           | 3150473.0
+50     | 'npm install confidence '           | 3129373.0
+51     | 'Undefined Behaviour'               | 3106694.0
+52     | '404ErrorFixers'                    | 3078592.0
+53     | 'Buzuziano'                         | 3045205.0
+54     | 'O(n!^n!)'                          | 2983531.0
+55     | 'Hacka-buddies'                     | 2914694.0
+56     | 'Max-ed Algo'                       | 2654295.0
+57     | 'Paprika'                           | 2640766.0
+58     | group 10                            | 2544786.0
+59     | 'Stack Underflow'                   | 2517904.0
+60     | 'Young & Turnt”                     | 2462430.0
+61     | 'TELECT'                            | 2459081.0
+62     | 'NextPhase'                         | 2321330.0
+63     | 'TN '                               | 2172435.0
+64     | 'CodeStorm'                         | 2128469.0
+65     | Segfault Syndicate // Dude’s on Code | 1826559.0
+66     | 'Coderz'                            | 1824819.0
+67     | 'Cipherions'                        | 1796449.0
+68     | 'Hack to the Max'                   | 1793597.0
+69     | 'Zero Latency '                     | 1788909.0
+70     | 'Dual-Core'                         | 1759361.0
+71     | 'Xero'                              | 1701711.0
+72     | 'TheAnointedCoders'                 | 1631048.0
+73     | 'cvBooster'                         | 1579653.0
+74     | 'Team 404'                          | 1574647.0
+75     | 'Go hard or Go Home'                | 1530781.0
+76     | Cache Money                         | 1493819.0
+77     | 'ALTF4'                             | 1478141.0
+78     | 'DeathStar'                         | 1291457.0
+79     | 'UNI-UNO-TRIO'                      | 1224653.0
+80     | 'ByteBinder'                        | 1165170.0
+81     | Vho nkene na vho nkenen̈gene        | 1139418.0
+82     | 'Merge Masters'                     | 1123141.0
+83     | 'Prompt Injectors'                  | 1114646.0
+84     | 'We deserve arrays'                 | 1075614.0
+85     | 'Echos'                             | 1073768.0
+86     | 'SheHackers'                        | 1068876.0
+87     | 'The Gradient Syndicate'            | 1027440.0
+88     | 'PrimeCode'                         | 1018322.0
+89     | 'Terry The terrible '               | 1001291.0
+90     | 'Infinite Loopers'                  | 1001281.0
+91     | 'mizu_apt'                          | 996889.0
+92     | 'TS LawKat'                         | 867020.0
+93     | 'KUL Tech Titans'                   | 770152.0
+94     | 'Code Fosters'                      | 764850.0
+95     | 'We Will Debug You'                 | 735249.0
+96     | 'CodeMonks'                         | 722928.0
+97     | 'O(at least it runs)'               | 722271.0
+98     | 'BUMBLEBEE'                         | 437073.0
+99     | 'Cryptic'                           | 402867.0
+100    | 'Git it 2gether'                    | 282381.0
+101    | 'Joint speed'                       | 262425.0
+102    | 'Belgium Coders'                    | 257764.0
+103    | 'ctrl+alt+elite'                    | 257702.0
+104    | '404 Found'                         | 257702.0
+105    | 'ThebeTech'                         | 257702.0
+106    | Eclipse Softworks                   | 257699.0
+107    | 'Hackstreet Boys'                   | 250920.0
+108    | 'Hackstreet boys'                   | 243151.0
+109    | 'Ctrl+Alt+Elite'                    | 238545.0
+110    | 'SixSevens'                         | 237404.0
+111    | Bug Slayers                         | 237404.0
+112    | 'Heaviside or Laplace?'             | 237404.0
+113    | 'GForce'                            | 237404.0
+114    | 'Plebs'                             | 237000.0
+115    | 'God's Own'                         | 237000.0
+116    | 'Doxygen '                          | 219802.0
+117    | 'JDK_HACKERS'                       | 133071.0
+118    | 'margins'                           | 30596.0
+119    | 'cerberus'                          | 27077.0
+120    | '4SP_NET'                           | 16132.0
+121    | 'Ensemble'                          | 14684.0
+122    | 'Code Blooded '                     | 14684.0
+123    | 'Runtime Legends'                   | 14684.0
+124    | 'Merge Conflict Resolved '          | 0.0
+125    | 'Arising Stars'                     | 0.0
+126    | 'Dev Black Ops'                     | 0.0
+127    | 'The AlgoBanishers'                 | 0.0
+128    | 'Code Wizards'                      | 0.0
+129    | 'Triumph Labs'                      | 0.0
+130    | '404 Cleanup Crew'                  | 0.0
+131    | 'Tech4Christ '                      | 0.0
+132    | 'AKV'                               | 0.0
+133    | Southeasters                        | 0.0
+134    | 'Alien-4S'                          | 0.0
+135    | 'CodeFusion'                        | 0.0
+136    | 'Venture Circle'                    | 0.0
+137    | 'WAFA WAFA'                         | 0.0
+138    | 'TheGrassTouchers'                  | 0.0
+139    | 'ByteForce'                         | 0.0
+140    | 'Cow&Chicken'                       | 0.0
+141    | 'Q hackers'                         | 0.0
