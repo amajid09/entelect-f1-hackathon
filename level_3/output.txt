@@ -18,7 +18,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -32,7 +32,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -46,13 +46,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -70,13 +70,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -130,7 +130,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -144,13 +144,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -178,8 +178,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -199,7 +198,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -213,7 +212,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -227,13 +226,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -251,13 +250,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -311,7 +310,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -325,13 +324,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -359,8 +358,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -380,7 +378,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -394,7 +392,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -408,13 +406,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -432,13 +430,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -492,7 +490,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -506,13 +504,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -540,8 +538,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -561,7 +558,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -575,7 +572,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -589,13 +586,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -613,13 +610,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -673,7 +670,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -687,13 +684,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 204.94
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -722,8 +719,7 @@
       ],
       "pit": {
         "enter": true,
-        "tyre_change_set_id": 4,
-        "fuel_refuel_amount_l": 7.61
+        "tyre_change_set_id": 4
       }
     },
     {
@@ -743,7 +739,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -757,7 +753,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -771,13 +767,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -795,13 +791,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -855,7 +851,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -869,13 +865,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -903,8 +899,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -924,7 +919,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -938,7 +933,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -952,13 +947,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -976,13 +971,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -1036,7 +1031,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -1050,13 +1045,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -1084,8 +1079,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -1105,7 +1099,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -1119,7 +1113,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -1133,13 +1127,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -1157,13 +1151,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -1217,7 +1211,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -1231,13 +1225,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -1265,8 +1259,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -1286,7 +1279,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -1300,7 +1293,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -1314,13 +1307,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -1338,13 +1331,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -1398,7 +1391,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -1412,13 +1405,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -1446,8 +1439,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -1467,7 +1459,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -1481,7 +1473,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -1495,13 +1487,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -1519,13 +1511,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -1579,7 +1571,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -1593,13 +1585,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -1627,8 +1619,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -1648,7 +1639,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -1662,7 +1653,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -1676,13 +1667,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -1700,13 +1691,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -1760,7 +1751,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -1774,13 +1765,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -1808,8 +1799,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -1829,7 +1819,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -1843,7 +1833,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -1857,13 +1847,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -1881,13 +1871,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -1941,7 +1931,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -1955,13 +1945,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -1989,8 +1979,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -2010,7 +1999,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -2024,7 +2013,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -2038,13 +2027,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -2062,13 +2051,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -2122,7 +2111,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -2136,13 +2125,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -2170,8 +2159,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -2191,7 +2179,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -2205,7 +2193,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -2219,13 +2207,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -2243,13 +2231,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -2303,7 +2291,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -2317,13 +2305,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -2351,8 +2339,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -2372,7 +2359,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -2386,7 +2373,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -2400,13 +2387,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -2424,13 +2411,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -2484,7 +2471,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -2498,13 +2485,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -2532,8 +2519,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -2553,7 +2539,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -2567,7 +2553,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -2581,13 +2567,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -2605,13 +2591,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -2665,7 +2651,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -2679,13 +2665,193 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
+        },
+        {
+          "id": 31,
+          "type": "corner"
+        },
+        {
+          "id": 32,
+          "type": "corner"
+        },
+        {
+          "id": 33,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 209.84
+        },
+        {
+          "id": 34,
+          "type": "corner"
+        },
+        {
+          "id": 35,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 216.73
+        }
+      ],
+      "pit": {
+        "enter": false
+      }
+    },
+    {
+      "lap": 16,
+      "segments": [
+        {
+          "id": 1,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 216.73
+        },
+        {
+          "id": 2,
+          "type": "corner"
+        },
+        {
+          "id": 3,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 221.48
+        },
+        {
+          "id": 4,
+          "type": "corner"
+        },
+        {
+          "id": 5,
+          "type": "corner"
+        },
+        {
+          "id": 6,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 219.08
+        },
+        {
+          "id": 7,
+          "type": "corner"
+        },
+        {
+          "id": 8,
+          "type": "corner"
+        },
+        {
+          "id": 9,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 216.73
+        },
+        {
+          "id": 10,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 216.73
+        },
+        {
+          "id": 11,
+          "type": "corner"
+        },
+        {
+          "id": 12,
+          "type": "corner"
+        },
+        {
+          "id": 13,
+          "type": "corner"
+        },
+        {
+          "id": 14,
+          "type": "straight",
+          "target_m/s": 86.18,
+          "brake_start_m_before_next": 222.74
+        },
+        {
+          "id": 15,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 246.8
+        },
+        {
+          "id": 16,
+          "type": "corner"
+        },
+        {
+          "id": 17,
+          "type": "corner"
+        },
+        {
+          "id": 18,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 239.38
+        },
+        {
+          "id": 19,
+          "type": "corner"
+        },
+        {
+          "id": 20,
+          "type": "straight",
+          "target_m/s": 89.32,
+          "brake_start_m_before_next": 239.95
+        },
+        {
+          "id": 21,
+          "type": "corner"
+        },
+        {
+          "id": 22,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 234.55
+        },
+        {
+          "id": 23,
+          "type": "corner"
+        },
+        {
+          "id": 24,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 251.9
+        },
+        {
+          "id": 25,
+          "type": "corner"
+        },
+        {
+          "id": 26,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 249.33
+        },
+        {
+          "id": 27,
+          "type": "corner"
+        },
+        {
+          "id": 28,
+          "type": "corner"
+        },
+        {
+          "id": 29,
+          "type": "straight",
+          "target_m/s": 87.08,
+          "brake_start_m_before_next": 228.31
+        },
+        {
+          "id": 30,
+          "type": "straight",
+          "target_m/s": 90,
+          "brake_start_m_before_next": 246.8
         },
         {
           "id": 31,
@@ -2714,189 +2880,7 @@
       ],
       "pit": {
         "enter": true,
-        "tyre_change_set_id": 5,
-        "fuel_refuel_amount_l": 7.61
-      }
-    },
-    {
-      "lap": 16,
-      "segments": [
-        {
-          "id": 1,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 244.45
-        },
-        {
-          "id": 2,
-          "type": "corner"
-        },
-        {
-          "id": 3,
-          "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
-        },
-        {
-          "id": 4,
-          "type": "corner"
-        },
-        {
-          "id": 5,
-          "type": "corner"
-        },
-        {
-          "id": 6,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
-        },
-        {
-          "id": 7,
-          "type": "corner"
-        },
-        {
-          "id": 8,
-          "type": "corner"
-        },
-        {
-          "id": 9,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
-        },
-        {
-          "id": 10,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
-        },
-        {
-          "id": 11,
-          "type": "corner"
-        },
-        {
-          "id": 12,
-          "type": "corner"
-        },
-        {
-          "id": 13,
-          "type": "corner"
-        },
-        {
-          "id": 14,
-          "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
-        },
-        {
-          "id": 15,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
-        },
-        {
-          "id": 16,
-          "type": "corner"
-        },
-        {
-          "id": 17,
-          "type": "corner"
-        },
-        {
-          "id": 18,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 233
-        },
-        {
-          "id": 19,
-          "type": "corner"
-        },
-        {
-          "id": 20,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
-        },
-        {
-          "id": 21,
-          "type": "corner"
-        },
-        {
-          "id": 22,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 227.43
-        },
-        {
-          "id": 23,
-          "type": "corner"
-        },
-        {
-          "id": 24,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 247.39
-        },
-        {
-          "id": 25,
-          "type": "corner"
-        },
-        {
-          "id": 26,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
-        },
-        {
-          "id": 27,
-          "type": "corner"
-        },
-        {
-          "id": 28,
-          "type": "corner"
-        },
-        {
-          "id": 29,
-          "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
-        },
-        {
-          "id": 30,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
-        },
-        {
-          "id": 31,
-          "type": "corner"
-        },
-        {
-          "id": 32,
-          "type": "corner"
-        },
-        {
-          "id": 33,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
-        },
-        {
-          "id": 34,
-          "type": "corner"
-        },
-        {
-          "id": 35,
-          "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 244.45
-        }
-      ],
-      "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "tyre_change_set_id": 5
       }
     },
     {
@@ -2915,8 +2899,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -2930,7 +2914,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -2943,14 +2927,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -2967,14 +2951,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -3028,7 +3012,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -3041,14 +3025,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -3076,8 +3060,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -3096,8 +3079,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -3111,7 +3094,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -3124,14 +3107,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -3148,14 +3131,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -3209,7 +3192,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -3222,14 +3205,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -3257,8 +3240,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -3277,8 +3259,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -3292,7 +3274,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -3305,14 +3287,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -3329,14 +3311,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -3390,7 +3372,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -3403,14 +3385,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -3439,7 +3421,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 19.55
       }
     },
     {
@@ -3458,8 +3440,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -3473,7 +3455,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -3486,14 +3468,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -3510,14 +3492,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -3571,7 +3553,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -3584,14 +3566,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -3619,8 +3601,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -3639,8 +3620,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -3654,7 +3635,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -3667,14 +3648,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -3691,14 +3672,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -3752,7 +3733,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -3765,14 +3746,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -3800,8 +3781,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -3820,8 +3800,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -3835,7 +3815,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -3848,14 +3828,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -3872,14 +3852,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -3933,7 +3913,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -3946,14 +3926,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -3982,7 +3962,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.81
       }
     },
     {
@@ -4001,8 +3981,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -4016,7 +3996,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 177.83
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -4029,14 +4009,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 171.52
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.52
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -4053,14 +4033,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 174.01
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 174.01
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -4074,7 +4054,7 @@
           "id": 18,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.27
+          "brake_start_m_before_next": 233
         },
         {
           "id": 19,
@@ -4084,7 +4064,7 @@
           "id": 20,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 177.83
+          "brake_start_m_before_next": 238.67
         },
         {
           "id": 21,
@@ -4094,7 +4074,7 @@
           "id": 22,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 172.76
+          "brake_start_m_before_next": 227.43
         },
         {
           "id": 23,
@@ -4114,7 +4094,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 176.54
+          "brake_start_m_before_next": 180.45
         },
         {
           "id": 27,
@@ -4128,13 +4108,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 170.3
+          "brake_start_m_before_next": 179.13
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 170.3
+          "brake_start_m_before_next": 179.13
         },
         {
           "id": 31,
@@ -4164,7 +4144,7 @@
       "pit": {
         "enter": true,
         "tyre_change_set_id": 1,
-        "fuel_refuel_amount_l": 7.6
+        "fuel_refuel_amount_l": 7.58
       }
     },
     {
@@ -4184,7 +4164,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -4198,7 +4178,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -4212,13 +4192,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -4236,13 +4216,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -4296,7 +4276,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -4310,13 +4290,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -4344,8 +4324,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -4365,7 +4344,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -4379,7 +4358,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -4393,13 +4372,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -4417,13 +4396,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -4477,7 +4456,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -4491,13 +4470,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -4525,8 +4504,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -4546,7 +4524,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -4560,7 +4538,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -4574,13 +4552,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -4598,13 +4576,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -4658,7 +4636,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -4672,13 +4650,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -4707,7 +4685,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.84
       }
     },
     {
@@ -4727,7 +4705,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -4741,7 +4719,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -4755,13 +4733,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -4779,13 +4757,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -4839,7 +4817,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -4853,13 +4831,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -4887,8 +4865,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -4908,7 +4885,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -4922,7 +4899,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -4936,13 +4913,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -4960,13 +4937,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -5020,7 +4997,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -5034,13 +5011,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -5068,8 +5045,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -5089,7 +5065,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -5103,7 +5079,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -5117,13 +5093,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -5141,13 +5117,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -5201,7 +5177,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -5215,13 +5191,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -5250,7 +5226,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.82
       }
     },
     {
@@ -5270,7 +5246,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -5284,7 +5260,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -5298,13 +5274,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -5322,13 +5298,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -5382,7 +5358,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -5396,13 +5372,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -5430,8 +5406,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -5451,7 +5426,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -5465,7 +5440,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -5479,13 +5454,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -5503,13 +5478,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -5563,7 +5538,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -5577,13 +5552,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -5611,8 +5586,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -5632,7 +5606,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -5646,7 +5620,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -5660,13 +5634,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -5684,13 +5658,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -5744,7 +5718,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -5758,13 +5732,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -5793,7 +5767,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.81
       }
     },
     {
@@ -5813,7 +5787,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -5827,7 +5801,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -5841,13 +5815,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -5865,13 +5839,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -5925,7 +5899,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -5939,13 +5913,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -5973,8 +5947,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -5994,7 +5967,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -6008,7 +5981,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -6022,13 +5995,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -6046,13 +6019,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -6106,7 +6079,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -6120,13 +6093,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -6154,8 +6127,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -6175,7 +6147,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -6189,7 +6161,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -6203,13 +6175,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -6227,13 +6199,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -6287,7 +6259,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -6301,13 +6273,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -6336,7 +6308,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "fuel_refuel_amount_l": 22.81
       }
     },
     {
@@ -6356,7 +6328,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -6370,7 +6342,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -6384,13 +6356,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -6408,13 +6380,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -6468,7 +6440,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -6482,13 +6454,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -6516,8 +6488,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -6537,7 +6508,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -6551,7 +6522,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -6565,13 +6536,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -6589,13 +6560,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -6649,7 +6620,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -6663,13 +6634,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -6697,8 +6668,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -6718,7 +6688,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -6732,7 +6702,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -6746,13 +6716,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -6770,13 +6740,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -6830,7 +6800,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -6844,13 +6814,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -6879,7 +6849,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.82
       }
     },
     {
@@ -6899,7 +6869,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -6913,7 +6883,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -6927,13 +6897,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -6951,13 +6921,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -7011,7 +6981,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -7025,13 +6995,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -7059,8 +7029,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -7080,7 +7049,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -7094,7 +7063,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -7108,13 +7077,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -7132,13 +7101,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -7192,7 +7161,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -7206,13 +7175,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -7240,8 +7209,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -7261,7 +7229,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -7275,7 +7243,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -7289,13 +7257,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -7313,13 +7281,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -7373,7 +7341,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -7387,13 +7355,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -7422,7 +7390,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.81
       }
     },
     {
@@ -7442,7 +7410,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -7456,7 +7424,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -7470,13 +7438,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -7494,13 +7462,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -7554,7 +7522,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -7568,13 +7536,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -7602,8 +7570,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -7623,7 +7590,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -7637,7 +7604,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -7651,13 +7618,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -7675,13 +7642,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -7735,7 +7702,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -7749,13 +7716,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -7783,8 +7750,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -7804,7 +7770,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -7818,7 +7784,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -7832,13 +7798,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -7856,13 +7822,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -7916,7 +7882,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -7930,13 +7896,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -7965,7 +7931,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.82
       }
     },
     {
@@ -7985,7 +7951,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -7999,7 +7965,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -8013,13 +7979,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -8037,13 +8003,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -8097,7 +8063,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -8111,13 +8077,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -8145,8 +8111,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -8166,7 +8131,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -8180,7 +8145,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -8194,13 +8159,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -8218,13 +8183,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -8238,7 +8203,7 @@
           "id": 18,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 176.92
+          "brake_start_m_before_next": 163.59
         },
         {
           "id": 19,
@@ -8248,7 +8213,7 @@
           "id": 20,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 167.5
         },
         {
           "id": 21,
@@ -8258,7 +8223,7 @@
           "id": 22,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 173.41
+          "brake_start_m_before_next": 159.75
         },
         {
           "id": 23,
@@ -8268,7 +8233,7 @@
           "id": 24,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 185.98
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 25,
@@ -8278,7 +8243,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -8292,13 +8257,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
@@ -8312,7 +8277,7 @@
           "id": 33,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 165.54
         },
         {
           "id": 34,
@@ -8322,12 +8287,11 @@
           "id": 35,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 184.12
+          "brake_start_m_before_next": 171.49
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -8337,7 +8301,7 @@
           "id": 1,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 184.12
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 2,
@@ -8347,7 +8311,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -8361,7 +8325,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -8375,13 +8339,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -8399,13 +8363,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -8459,7 +8423,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -8473,13 +8437,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -8508,7 +8472,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "fuel_refuel_amount_l": 22.8
       }
     },
     {
@@ -8528,7 +8492,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -8542,7 +8506,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -8556,13 +8520,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -8580,13 +8544,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -8640,7 +8604,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -8654,13 +8618,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -8688,8 +8652,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.61
+        "enter": false
       }
     },
     {
@@ -8709,7 +8672,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -8723,7 +8686,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.48
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -8737,13 +8700,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -8761,13 +8724,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 175.16
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -8821,7 +8784,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 178.69
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -8835,13 +8798,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 169.97
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -8869,8 +8832,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 7.6
+        "enter": false
       }
     },
     {
@@ -8880,7 +8842,7 @@
           "id": 1,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 220.59
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 2,
@@ -8890,7 +8852,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 210.67
+          "brake_start_m_before_next": 187.87
         },
         {
           "id": 4,
@@ -8904,7 +8866,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 216.56
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 7,
@@ -8918,13 +8880,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 206.84
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 206.84
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 11,
@@ -8942,13 +8904,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 210.67
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 210.67
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 16,
@@ -8962,7 +8924,7 @@
           "id": 18,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.62
+          "brake_start_m_before_next": 176.92
         },
         {
           "id": 19,
@@ -8972,7 +8934,7 @@
           "id": 20,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 216.56
+          "brake_start_m_before_next": 180.48
         },
         {
           "id": 21,
@@ -8982,7 +8944,7 @@
           "id": 22,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 208.75
+          "brake_start_m_before_next": 173.41
         },
         {
           "id": 23,
@@ -8992,7 +8954,7 @@
           "id": 24,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 222.64
+          "brake_start_m_before_next": 185.98
         },
         {
           "id": 25,
@@ -9002,7 +8964,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 214.58
+          "brake_start_m_before_next": 184.12
         },
         {
           "id": 27,
@@ -9016,13 +8978,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 204.94
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 204.94
+          "brake_start_m_before_next": 182.29
         },
         {
           "id": 31,
@@ -9052,7 +9014,7 @@
       "pit": {
         "enter": true,
         "tyre_change_set_id": 4,
-        "fuel_refuel_amount_l": 7.61
+        "fuel_refuel_amount_l": 22.8
       }
     },
     {
@@ -9072,7 +9034,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -9086,7 +9048,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -9100,13 +9062,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -9124,13 +9086,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -9184,7 +9146,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -9198,13 +9160,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -9232,8 +9194,7 @@
         }
       ],
       "pit": {
-        "enter": true,
-        "fuel_refuel_amount_l": 2.14
+        "enter": false
       }
     },
     {
@@ -9253,7 +9214,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -9267,7 +9228,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -9281,13 +9242,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -9305,13 +9266,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -9365,7 +9326,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -9379,13 +9340,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -9433,7 +9394,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -9447,7 +9408,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -9461,13 +9422,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -9485,13 +9446,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -9545,7 +9506,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -9559,13 +9520,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -9594,7 +9555,7 @@
       ],
       "pit": {
         "enter": true,
-        "fuel_refuel_amount_l": 0.02
+        "fuel_refuel_amount_l": 22.82
       }
     },
     {
@@ -9614,7 +9575,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -9628,7 +9589,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -9642,13 +9603,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -9666,13 +9627,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -9726,7 +9687,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -9740,13 +9701,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -9794,7 +9755,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -9808,7 +9769,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -9822,13 +9783,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -9846,13 +9807,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -9906,7 +9867,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -9920,13 +9881,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -9974,7 +9935,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -9988,7 +9949,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -10002,13 +9963,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -10026,13 +9987,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -10086,7 +10047,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -10100,13 +10061,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -10134,7 +10095,8 @@
         }
       ],
       "pit": {
-        "enter": false
+        "enter": true,
+        "fuel_refuel_amount_l": 22.81
       }
     },
     {
@@ -10154,7 +10116,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -10168,7 +10130,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -10182,13 +10144,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -10206,13 +10168,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -10266,7 +10228,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -10280,13 +10242,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -10334,7 +10296,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -10348,7 +10310,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -10362,13 +10324,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -10386,13 +10348,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -10446,7 +10408,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -10460,13 +10422,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -10514,7 +10476,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -10528,7 +10490,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -10542,13 +10504,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -10566,13 +10528,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -10626,7 +10588,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -10640,13 +10602,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -10674,7 +10636,8 @@
         }
       ],
       "pit": {
-        "enter": false
+        "enter": true,
+        "fuel_refuel_amount_l": 22.8
       }
     },
     {
@@ -10694,7 +10657,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -10708,7 +10671,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -10722,13 +10685,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -10746,13 +10709,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -10806,7 +10769,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 209.84
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -10820,13 +10783,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 198.76
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -10874,7 +10837,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 221.48
         },
         {
           "id": 4,
@@ -10888,7 +10851,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 212.11
+          "brake_start_m_before_next": 219.08
         },
         {
           "id": 7,
@@ -10902,13 +10865,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 200.94
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 11,
@@ -10926,13 +10889,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 205.35
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 16,
@@ -10986,7 +10949,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 241.83
+          "brake_start_m_before_next": 216.73
         },
         {
           "id": 27,
@@ -10999,14 +10962,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 88.78,
-          "brake_start_m_before_next": 221.97
+          "target_m/s": 90,
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 229.79
+          "brake_start_m_before_next": 214.41
         },
         {
           "id": 31,
@@ -11020,7 +10983,7 @@
           "id": 33,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 241.83
+          "brake_start_m_before_next": 209.84
         },
         {
           "id": 34,
@@ -11029,13 +10992,14 @@
         {
           "id": 35,
           "type": "straight",
-          "target_m/s": 89.32,
-          "brake_start_m_before_next": 245
+          "target_m/s": 90,
+          "brake_start_m_before_next": 216.73
         }
       ],
       "pit": {
         "enter": true,
-        "tyre_change_set_id": 5
+        "tyre_change_set_id": 5,
+        "fuel_refuel_amount_l": 15.2
       }
     },
     {
@@ -11054,8 +11018,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -11069,7 +11033,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -11082,14 +11046,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -11106,14 +11070,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -11167,7 +11131,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -11180,14 +11144,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -11215,7 +11179,7 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": false
       }
     },
     {
@@ -11234,8 +11198,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -11249,7 +11213,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -11262,14 +11226,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -11286,14 +11250,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -11347,7 +11311,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -11360,14 +11324,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -11395,7 +11359,7 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": false
       }
     },
     {
@@ -11414,8 +11378,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -11429,7 +11393,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -11442,14 +11406,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -11466,14 +11430,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -11527,7 +11491,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -11540,14 +11504,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -11575,7 +11539,8 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": true,
+        "fuel_refuel_amount_l": 22.83
       }
     },
     {
@@ -11594,8 +11559,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -11609,7 +11574,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -11622,14 +11587,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -11646,14 +11611,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -11707,7 +11672,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -11720,14 +11685,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -11755,7 +11720,7 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": false
       }
     },
     {
@@ -11774,8 +11739,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -11789,7 +11754,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -11802,14 +11767,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -11826,14 +11791,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -11887,7 +11852,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -11900,14 +11865,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -11935,7 +11900,7 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": false
       }
     },
     {
@@ -11954,8 +11919,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -11969,7 +11934,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -11982,14 +11947,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -12006,14 +11971,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -12067,7 +12032,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -12080,14 +12045,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -12115,7 +12080,8 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": true,
+        "fuel_refuel_amount_l": 22.81
       }
     },
     {
@@ -12134,8 +12100,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 87.95,
-          "brake_start_m_before_next": 217.17
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -12149,7 +12115,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 238.67
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -12162,14 +12128,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 224.68
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -12186,14 +12152,14 @@
         {
           "id": 14,
           "type": "straight",
-          "target_m/s": 89.5,
-          "brake_start_m_before_next": 227.02
+          "target_m/s": 86.81,
+          "brake_start_m_before_next": 221.39
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 230.21
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 16,
@@ -12247,7 +12213,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 235.82
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 27,
@@ -12260,14 +12226,14 @@
         {
           "id": 29,
           "type": "straight",
-          "target_m/s": 89.81,
-          "brake_start_m_before_next": 220.75
+          "target_m/s": 87.88,
+          "brake_start_m_before_next": 228.06
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 221.94
+          "brake_start_m_before_next": 241.54
         },
         {
           "id": 31,
@@ -12295,7 +12261,7 @@
         }
       ],
       "pit": {
-        "enter": true
+        "enter": false
       }
     },
     {
@@ -12305,7 +12271,7 @@
           "id": 1,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 180.45
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 2,
@@ -12314,8 +12280,8 @@
         {
           "id": 3,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 174.01
+          "target_m/s": 86.87,
+          "brake_start_m_before_next": 230.62
         },
         {
           "id": 4,
@@ -12329,7 +12295,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 177.83
+          "brake_start_m_before_next": 247.39
         },
         {
           "id": 7,
@@ -12342,14 +12308,14 @@
         {
           "id": 9,
           "type": "straight",
-          "target_m/s": 90,
-          "brake_start_m_before_next": 171.52
+          "target_m/s": 89,
+          "brake_start_m_before_next": 238.04
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 171.52
+          "brake_start_m_before_next": 244.45
         },
         {
           "id": 11,
@@ -12367,13 +12333,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 174.01
+          "brake_start_m_before_next": 179.13
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 174.01
+          "brake_start_m_before_next": 179.13
         },
         {
           "id": 16,
@@ -12427,7 +12393,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 176.54
+          "brake_start_m_before_next": 180.45
         },
         {
           "id": 27,
@@ -12441,13 +12407,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 170.3
+          "brake_start_m_before_next": 179.13
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 170.3
+          "brake_start_m_before_next": 179.13
         },
         {
           "id": 31,
@@ -12496,7 +12462,7 @@
           "id": 3,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 175.58
         },
         {
           "id": 4,
@@ -12510,7 +12476,7 @@
           "id": 6,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 167.5
+          "brake_start_m_before_next": 173.52
         },
         {
           "id": 7,
@@ -12524,13 +12490,13 @@
           "id": 9,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 10,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 157.85
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 11,
@@ -12548,13 +12514,13 @@
           "id": 14,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 15,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 161.66
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 16,
@@ -12608,7 +12574,7 @@
           "id": 26,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 165.54
+          "brake_start_m_before_next": 171.49
         },
         {
           "id": 27,
@@ -12622,13 +12588,13 @@
           "id": 29,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 30,
           "type": "straight",
           "target_m/s": 90,
-          "brake_start_m_before_next": 155.96
+          "brake_start_m_before_next": 169.48
         },
         {
           "id": 31,
