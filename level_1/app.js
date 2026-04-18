@@ -1,4 +1,3 @@
-
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -11,7 +10,11 @@ function readFileData(file) {
 }
 
 function writeOutput(data, file = "output.txt") {
-  fs.writeFileSync(path.join(__dirname, file), JSON.stringify(data, null, 2), "utf8");
+  fs.writeFileSync(
+    path.join(__dirname, file),
+    JSON.stringify(data, null, 2),
+    "utf8"
+  );
 }
 
 const data = readFileData("1.txt");
@@ -19,62 +22,74 @@ const { car, race, track, available_sets, weather, tyres } = data;
 const weatherConditions = weather.conditions;
 const tyreProperties = tyres.properties;
 
-function round2(v) { return Math.round(v * 100) / 100; }
+function round2(v) {
+  return Math.round(v * 100) / 100;
+}
 
 const WEATHER_KEY_MAP = {
-  dry:        "dry_friction_multiplier",
-  cold:       "cold_friction_multiplier",
+  dry: "dry_friction_multiplier",
+  cold: "cold_friction_multiplier",
   light_rain: "light_rain_friction_multiplier",
   heavy_rain: "heavy_rain_friction_multiplier",
 };
 
 function getStartingWeather() {
-  return weatherConditions.find(w => w.id === race.starting_weather_condition_id)
-    ?? weatherConditions[0];
+  return (
+    weatherConditions.find((w) => w.id === race.starting_weather_condition_id) ??
+    weatherConditions[0]
+  );
 }
 
-
 function pickBestCompound() {
-  const weather = getStartingWeather();
-  const key = WEATHER_KEY_MAP[weather.condition] ?? "dry_friction_multiplier";
+  const startingWeather = getStartingWeather();
+  const key =
+    WEATHER_KEY_MAP[startingWeather.condition] ?? "dry_friction_multiplier";
 
-  let best = null, bestFriction = -Infinity;
+  let bestSet = null;
+  let bestFriction = -Infinity;
+
   for (const set of available_sets) {
     const props = tyreProperties[set.compound];
-    // friction = life_span * weather_multiplier  (no degradation in L1)
     const friction = props.life_span * props[key];
-    if (friction > bestFriction) { bestFriction = friction; best = set; }
+
+    if (friction > bestFriction) {
+      bestFriction = friction;
+      bestSet = set;
+    }
   }
-  return best;
+
+  return bestSet;
 }
 
 function getTyreFriction(compound) {
   const props = tyreProperties[compound];
-  const weather = getStartingWeather();
-  const key = WEATHER_KEY_MAP[weather.condition] ?? "dry_friction_multiplier";
+  const startingWeather = getStartingWeather();
+  const key =
+    WEATHER_KEY_MAP[startingWeather.condition] ?? "dry_friction_multiplier";
+
   return props.life_span * props[key];
 }
 
-function safeCornerSpeed(radius, compound) {
-  const friction = getTyreFriction(compound);
-  return Math.sqrt(friction * 9.8 * radius) + car["crawl_constant_m/s"];
+function safeCornerSpeed(radius, tyreFriction) {
+  return Math.sqrt(tyreFriction * 9.8 * radius) + car["crawl_constant_m/s"];
 }
 
-/**
- * On a straight of `length` m, starting at `entrySpeed` and needing to
- * arrive at `cornerSpeed`:
- *   accel phase:  entry → target   (distance = (target²-entry²)/(2a))
- *   cruise phase: target           (distance = rest)
- *   brake phase:  target → corner  (distance = (target²-corner²)/(2b))
- *
- * Solving for target s.t. accelDist + brakeDist ≤ length:
- *   (t²-e²)/(2a) + (t²-c²)/(2b) ≤ L
- *   t² [ 1/(2a)+1/(2b) ] ≤ L + e²/(2a) + c²/(2b)
- */
-function solveMaxPeakSpeed({ entrySpeed, cornerSpeed, length, accel, brake, maxSpeed }) {
-  const num = length + entrySpeed ** 2 / (2 * accel) + cornerSpeed ** 2 / (2 * brake);
-  const den = 1 / (2 * accel) + 1 / (2 * brake);
-  const target = Math.sqrt(Math.max(0, num / den));
+function solveMaxPeakSpeed({
+  entrySpeed,
+  cornerSpeed,
+  length,
+  accel,
+  brake,
+  maxSpeed,
+}) {
+  const numerator =
+    length +
+    entrySpeed ** 2 / (2 * accel) +
+    cornerSpeed ** 2 / (2 * brake);
+
+  const denominator = 1 / (2 * accel) + 1 / (2 * brake);
+
+  const target = Math.sqrt(Math.max(0, numerator / denominator));
   return Math.min(target, maxSpeed);
 }
 
@@ -82,75 +97,125 @@ function brakeDistance(targetSpeed, cornerSpeed, brake) {
   return Math.max(0, (targetSpeed ** 2 - cornerSpeed ** 2) / (2 * brake));
 }
 
-function getNextCornerIndex(segments, from) {
-  for (let i = from + 1; i < segments.length; i++) {
+function getNextCornerIndex(segments, fromIndex) {
+  for (let i = fromIndex + 1; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
+
   for (let i = 0; i < segments.length; i++) {
     if (segments[i].type === "corner") return i;
   }
+
   return -1;
 }
 
-// ── Lap generation ───────────────────────────────────────────────────────────
-function generateLap(segments, entrySpeed, compound) {
-  const out = [];
-  let speed = entrySpeed;
+function getCornerChainLimitSpeed(segments, firstCornerIndex, cornerSpeedMap) {
+  let minSpeed = Infinity;
+  let i = firstCornerIndex;
+
+  while (i < segments.length && segments[i].type === "corner") {
+    minSpeed = Math.min(minSpeed, cornerSpeedMap.get(segments[i].id));
+    i += 1;
+  }
+
+  return minSpeed;
+}
+
+function generateLap(segments, entrySpeed, cornerSpeedMap) {
+  const outputSegments = [];
+  let currentSpeed = entrySpeed;
 
   for (let i = 0; i < segments.length; i++) {
-    const seg = segments[i];
+    const segment = segments[i];
 
-    if (seg.type === "straight") {
-      const ni = getNextCornerIndex(segments, i);
-      if (ni === -1) throw new Error("No corner on track");
-      const nextCorner = segments[ni];
-      const cs = safeCornerSpeed(nextCorner.radius_m, compound);
+    if (segment.type === "straight") {
+      const firstCornerIndex = getNextCornerIndex(segments, i);
 
-      const target = solveMaxPeakSpeed({
-        entrySpeed: speed,
-        cornerSpeed: cs,
-        length: seg.length_m,
+      if (firstCornerIndex === -1) {
+        throw new Error("Track must contain at least one corner");
+      }
+
+      const limitingCornerSpeed = getCornerChainLimitSpeed(
+        segments,
+        firstCornerIndex,
+        cornerSpeedMap
+      );
+
+      const targetSpeed = solveMaxPeakSpeed({
+        entrySpeed: currentSpeed,
+        cornerSpeed: limitingCornerSpeed,
+        length: segment.length_m,
         accel: car["accel_m/se2"],
         brake: car["brake_m/se2"],
         maxSpeed: car["max_speed_m/s"],
       });
 
-      const bd = brakeDistance(target, cs, car["brake_m/se2"]);
+      const brakingDistance = brakeDistance(
+        targetSpeed,
+        limitingCornerSpeed,
+        car["brake_m/se2"]
+      );
 
-      out.push({
-        id: seg.id,
+      outputSegments.push({
+        id: segment.id,
         type: "straight",
-        "target_m/s": round2(target),
-        brake_start_m_before_next: round2(bd),
+        "target_m/s": round2(targetSpeed),
+        brake_start_m_before_next: round2(brakingDistance),
       });
 
-      speed = cs; // exit straight at corner speed
+      currentSpeed = limitingCornerSpeed;
     } else {
-      out.push({ id: seg.id, type: "corner" });
-      // speed unchanged through corner
+      outputSegments.push({
+        id: segment.id,
+        type: "corner",
+      });
     }
   }
 
-  return { segments: out, exitSpeed: speed };
+  return {
+    segments: outputSegments,
+    exitSpeed: currentSpeed,
+  };
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
 const bestSet = pickBestCompound();
 const compound = bestSet.compound;
 const initialTyreId = bestSet.ids[0];
+const tyreFriction = getTyreFriction(compound);
+
+const cornerSpeedMap = new Map();
+
+for (const segment of track.segments) {
+  if (segment.type === "corner") {
+    cornerSpeedMap.set(
+      segment.id,
+      safeCornerSpeed(segment.radius_m, tyreFriction)
+    );
+  }
+}
 
 const laps = [];
 let currentSpeed = 0;
 
 for (let lap = 1; lap <= race.laps; lap++) {
-  const result = generateLap(track.segments, currentSpeed, compound);
+  const result = generateLap(track.segments, currentSpeed, cornerSpeedMap);
+
   laps.push({
     lap,
     segments: result.segments,
-    pit: { enter: false },
+    pit: {
+      enter: false,
+    },
   });
+
   currentSpeed = result.exitSpeed;
 }
 
-writeOutput({ initial_tyre_id: initialTyreId, laps });
-console.log(`Level 1 done. Compound: ${compound} (id=${initialTyreId})`);
+const output = {
+  initial_tyre_id: initialTyreId,
+  laps,
+};
+
+writeOutput(output);
+
+console.log(`Level 1 optimized. Compound: ${compound} (id=${initialTyreId})`);
